@@ -129,7 +129,12 @@ function ContactForm() {
                             value={form.name}
                             onChange={(e) => update("name", e.target.value)}
                             required
+                            className="invalid:border-red-300 peer"
+                            placeholder=" "
                           />
+                          <p className="hidden peer-invalid:peer-not-placeholder-shown:block text-xs text-red-500">
+                            Name is required.
+                          </p>
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="email">Email *</Label>
@@ -139,7 +144,12 @@ function ContactForm() {
                             value={form.email}
                             onChange={(e) => update("email", e.target.value)}
                             required
+                            className="invalid:border-red-300 peer"
+                            placeholder=" "
                           />
+                          <p className="hidden peer-invalid:peer-not-placeholder-shown:block text-xs text-red-500">
+                            Please enter a valid email address.
+                          </p>
                         </div>
                       </div>
 
@@ -188,7 +198,11 @@ function ContactForm() {
                           onChange={(e) => update("message", e.target.value)}
                           placeholder="Tell us about your import compliance needs..."
                           required
+                          className="invalid:border-red-300 peer"
                         />
+                        <p className="hidden peer-invalid:peer-not-placeholder-shown:block text-xs text-red-500">
+                          Message is required.
+                        </p>
                       </div>
 
                       {/* Honeypot */}
@@ -274,18 +288,18 @@ function ContactForm() {
                 </CardContent>
               </Card>
 
-              {/* Google Maps */}
+              {/* Google Maps — static fallback with link */}
               <Card className="overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.4!2d77.17!3d28.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHemkunt+House%2C+Rajendra+Place%2C+New+Delhi!5e0!3m2!1sen!2sin!4v1700000000000"
-                  width="100%"
-                  height="200"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="AccessIndia Office Location"
-                />
+                <a
+                  href="https://www.google.com/maps/search/Hemkunt+House,+Rajendra+Place,+New+Delhi+110008"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-[var(--light-bg)] p-6 text-center hover:bg-gray-100 transition-colors"
+                >
+                  <MapPin className="w-8 h-8 text-[var(--gold)] mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-[var(--navy)]">View on Google Maps</p>
+                  <p className="text-xs text-gray-500 mt-1">Hemkunt House, Rajendra Place, New Delhi</p>
+                </a>
               </Card>
             </div>
           </div>

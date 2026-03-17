@@ -26,12 +26,9 @@ function AnimatedNumber({ end, suffix, label }: { end: number; suffix: string; l
 
 export function NumbersSection() {
   return (
-    <section className="bg-[var(--navy)] py-16 md:py-20">
+    <section className="bg-[var(--navy)] py-12 md:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-12">
-          The Numbers
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
           {NUMBERS.map((n) => (
             <AnimatedNumber key={n.label} {...n} />
           ))}

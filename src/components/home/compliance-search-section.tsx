@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge";
 
 export function ComplianceSearchSection() {
   return (
-    <section className="py-16 md:py-20 bg-[var(--light-bg)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-12 md:py-16 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Badge className="bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold)] mb-4">
           Beta
         </Badge>

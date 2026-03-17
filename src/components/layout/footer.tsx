@@ -8,25 +8,25 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-[var(--gold)] mb-4">Company</h3>
+            <p className="text-base font-semibold text-[var(--gold)] mb-4" role="heading" aria-level={3}>Company</p>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors">
+                <Link href="/about" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors inline-block py-2">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors">
+                <Link href="/services" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors inline-block py-2">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/vision" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors">
+                <Link href="/vision" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors inline-block py-2">
                   Vision & Values
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors">
+                <Link href="/contact" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors inline-block py-2">
                   Contact
                 </Link>
               </li>
@@ -35,10 +35,10 @@ export function Footer() {
 
           {/* Tools */}
           <div>
-            <h3 className="text-sm font-semibold text-[var(--gold)] mb-4">Tools</h3>
+            <p className="text-base font-semibold text-[var(--gold)] mb-4" role="heading" aria-level={3}>Tools</p>
             <ul className="space-y-2">
               <li>
-                <Link href="/search" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors">
+                <Link href="/search" className="text-sm text-white/70 hover:text-[var(--gold)] transition-colors inline-block py-2">
                   Compliance Search (Beta)
                 </Link>
               </li>
@@ -47,7 +47,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-sm font-semibold text-[var(--gold)] mb-4">Disclaimer</h3>
+            <p className="text-base font-semibold text-[var(--gold)] mb-4" role="heading" aria-level={3}>Disclaimer</p>
             <p className="text-sm text-white/50">
               Information provided is for guidance only and should not be
               considered legal or professional advice. Regulations change
@@ -58,17 +58,17 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold text-[var(--gold)] mb-4">Contact</h3>
+            <p className="text-base font-semibold text-[var(--gold)] mb-4" role="heading" aria-level={3}>Contact</p>
             <div className="space-y-2 text-sm text-white/70">
               <p>9th & 12th Floor, Hemkunt House</p>
               <p>Rajendra Place, New Delhi 110008</p>
               <p>
-                <a href="tel:+911141413939" className="hover:text-[var(--gold)] transition-colors">
+                <a href="tel:+911141413939" className="hover:text-[var(--gold)] transition-colors inline-block py-1">
                   +91-11-41413939
                 </a>
               </p>
               <p>
-                <a href="mailto:help@accessindia.ai" className="hover:text-[var(--gold)] transition-colors">
+                <a href="mailto:help@accessindia.ai" className="hover:text-[var(--gold)] transition-colors inline-block py-1">
                   help@accessindia.ai
                 </a>
               </p>

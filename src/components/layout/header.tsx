@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -15,6 +16,7 @@ const NAV_LINKS = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="bg-[var(--navy)] sticky top-0 z-50">
@@ -29,21 +31,28 @@ export function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-6">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-white/80 hover:text-[var(--gold)] transition-colors flex items-center gap-1.5 py-2"
-              >
-                {link.href === "/search" && <Search className="w-3.5 h-3.5" />}
-                {link.label}
-                {link.badge && (
-                  <Badge className="bg-[var(--gold)] text-[var(--navy)] text-[10px] px-1.5 py-0 hover:bg-[var(--gold)]">
-                    {link.badge}
-                  </Badge>
-                )}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors flex items-center gap-1.5 py-2 border-b-2 ${
+                    isActive
+                      ? "text-[var(--gold)] border-[var(--gold)]"
+                      : "text-white/80 border-transparent hover:text-[var(--gold)]"
+                  }`}
+                >
+                  {link.href === "/search" && <Search className="w-3.5 h-3.5" />}
+                  {link.label}
+                  {link.badge && (
+                    <Badge className="bg-[var(--gold)] text-[var(--navy)] text-[10px] px-1.5 py-0 hover:bg-[var(--gold)]">
+                      {link.badge}
+                    </Badge>
+                  )}
+                </Link>
+              );
+            })}
             <Link
               href="/contact"
               className="ml-2 px-4 py-2 bg-[var(--gold)] text-[var(--navy)] text-sm font-semibold rounded-lg hover:bg-[#c49a3a] transition-colors"
@@ -67,22 +76,29 @@ export function Header() {
       {mobileMenuOpen && (
         <nav className="lg:hidden bg-[var(--navy)] border-t border-white/10">
           <div className="px-4 py-3 space-y-1">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-white/80 hover:text-[var(--gold)] hover:bg-white/5 rounded-lg transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.href === "/search" && <Search className="w-3.5 h-3.5" />}
-                {link.label}
-                {link.badge && (
-                  <Badge className="bg-[var(--gold)] text-[var(--navy)] text-[10px] px-1.5 py-0 hover:bg-[var(--gold)]">
-                    {link.badge}
-                  </Badge>
-                )}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors ${
+                    isActive
+                      ? "text-[var(--gold)] bg-white/10"
+                      : "text-white/80 hover:text-[var(--gold)] hover:bg-white/5"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.href === "/search" && <Search className="w-3.5 h-3.5" />}
+                  {link.label}
+                  {link.badge && (
+                    <Badge className="bg-[var(--gold)] text-[var(--navy)] text-[10px] px-1.5 py-0 hover:bg-[var(--gold)]">
+                      {link.badge}
+                    </Badge>
+                  )}
+                </Link>
+              );
+            })}
             <div className="pt-2">
               <Link
                 href="/contact"

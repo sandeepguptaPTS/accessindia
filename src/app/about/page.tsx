@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "About Us — Access India AI Private Limited",
@@ -29,19 +29,19 @@ const ARM_LEADERSHIP = [
     name: "Adv. Arjun Raghavendra M",
     role: "Founding Partner",
     initials: "AR",
-    bio: "Specializes in customs law, GST litigation, and international trade law. Brings deep expertise in trade remedy proceedings, anti-dumping investigations, and customs valuation disputes.",
+    focus: "Customs law, GST litigation, and international trade law. Deep expertise in trade remedy proceedings, anti-dumping investigations, and customs valuation disputes.",
   },
   {
     name: "Dr. Manjunath A N",
     role: "Partner",
     initials: "MA",
-    bio: "Expert in regulatory law, policy advocacy, and government liaison. His academic background in trade law combined with practical regulatory experience makes him a unique asset in complex compliance matters.",
+    focus: "Regulatory law, policy advocacy, and government liaison. Academic background in trade law combined with practical regulatory experience.",
   },
   {
     name: "Mr. Dhruva M. Seshadri",
     role: "Partner",
     initials: "DS",
-    bio: "Focuses on tax litigation, customs appeals, and trade compliance advisory. His track record in customs tribunals and appellate forums provides clients with strong legal representation.",
+    focus: "Tax litigation, customs appeals, and trade compliance advisory. Strong track record in customs tribunals and appellate forums.",
   },
 ];
 
@@ -58,11 +58,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Who We Are */}
+      {/* Who We Are + Why We Exist — side by side */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl text-[var(--navy)] mb-6">Who We Are</h2>
-          <div className="space-y-4 text-gray-600">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600">
             <p>
               Access India AI Private Limited is a policy, regulatory, and import
               compliance consulting firm built on 25+ years of hands-on experience
@@ -80,21 +80,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why We Exist */}
-      <section className="py-16 bg-[var(--light-bg)]">
+      {/* Why We Exist — bold pull-quote style */}
+      <section className="py-12 bg-[var(--light-bg)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl text-[var(--navy)] mb-6">Why We Exist</h2>
-          <div className="space-y-4 text-gray-600">
-            <p>
+          <div className="border-l-4 border-[var(--gold)] pl-6">
+            <h2 className="font-serif text-2xl text-[var(--navy)] mb-3">Why We Exist</h2>
+            <p className="text-gray-600">
               India&apos;s import compliance system is fragmented across 10+
               government agencies, hundreds of notifications, and constantly
               changing regulations. Most businesses either overpay duties, miss
-              FTA savings, face certification delays, or risk shipment holds —
-              simply because no single advisor covers the entire compliance chain.
+              FTA savings, or face certification delays — simply because no single
+              advisor covers the entire compliance chain.
             </p>
-            <p>
-              We exist to solve that. One firm, end-to-end, from the first
-              customs notification to the last stamp on your Bill of Entry.
+            <p className="mt-3 text-[var(--navy)] font-semibold">
+              One firm, end-to-end, from the first customs notification to the last stamp on your Bill of Entry.
             </p>
           </div>
         </div>
@@ -149,34 +148,35 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Team — editorial staggered layout */}
       <section className="py-16 bg-[var(--light-bg)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl text-[var(--navy)] mb-8">Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {TEAM.map((person) => (
-              <Card key={person.name}>
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-[var(--navy)] flex items-center justify-center">
-                      <span className="text-[var(--gold)] font-bold text-lg">{person.initials}</span>
-                    </div>
-                    <div>
-                      <CardTitle className="text-lg">{person.name}</CardTitle>
-                      <p className="text-sm text-[var(--gold)]">{person.role}</p>
-                    </div>
+          <h2 className="font-serif text-3xl text-[var(--navy)] mb-10">Our Team</h2>
+          <div className="space-y-12">
+            {TEAM.map((person, i) => (
+              <div
+                key={person.name}
+                className={`flex flex-col md:flex-row gap-6 ${
+                  i % 2 === 1 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                <div className="shrink-0 flex flex-col items-center md:items-start">
+                  <div className="w-20 h-20 rounded-full bg-[var(--navy)] flex items-center justify-center">
+                    <span className="text-[var(--gold)] font-bold text-2xl">{person.initials}</span>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-600">{person.bio}</p>
-                </CardContent>
-              </Card>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-[var(--navy)]">{person.name}</h3>
+                  <p className="text-sm text-[var(--gold)] font-medium mb-3">{person.role}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{person.bio}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ARM Partnership */}
+      {/* ARM Partnership — single narrative block with inline team */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl text-[var(--navy)] mb-3">
@@ -194,24 +194,19 @@ export default function AboutPage() {
             </a>{" "}
             brings specialized expertise in customs law, GST litigation, and trade remedies.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div className="space-y-6">
             {ARM_LEADERSHIP.map((person) => (
-              <Card key={person.name}>
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-[var(--deep-blue)] flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">{person.initials}</span>
-                    </div>
-                    <div>
-                      <CardTitle className="text-sm">{person.name}</CardTitle>
-                      <p className="text-xs text-[var(--gold)]">{person.role}</p>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-xs text-gray-600">{person.bio}</p>
-                </CardContent>
-              </Card>
+              <div key={person.name} className="flex items-start gap-4 border-l-4 border-[var(--deep-blue)] pl-5">
+                <div className="w-12 h-12 rounded-full bg-[var(--deep-blue)] flex items-center justify-center shrink-0">
+                  <span className="text-white font-bold text-sm">{person.initials}</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-[var(--navy)]">{person.name}</p>
+                  <p className="text-xs text-[var(--gold)] mb-1">{person.role}</p>
+                  <p className="text-sm text-gray-600">{person.focus}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
