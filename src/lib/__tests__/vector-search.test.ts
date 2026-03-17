@@ -1,19 +1,5 @@
 import { describe, it, expect } from "vitest";
-
-// Replicate the implementation from vector-search.ts:12-23 (with zero-vector guard).
-function cosineSimilarity(a: number[], b: number[]): number {
-  let dotProduct = 0;
-  let normA = 0;
-  let normB = 0;
-  for (let i = 0; i < a.length; i++) {
-    dotProduct += a[i] * b[i];
-    normA += a[i] * a[i];
-    normB += b[i] * b[i];
-  }
-  const denom = Math.sqrt(normA) * Math.sqrt(normB);
-  if (denom === 0) return 0;
-  return dotProduct / denom;
-}
+import { cosineSimilarity } from "@/lib/rag/vector-search";
 
 describe("cosineSimilarity", () => {
   it("returns 1 for identical vectors", () => {
@@ -34,11 +20,9 @@ describe("cosineSimilarity", () => {
   });
 
   it("handles high-dimensional embedding vectors", () => {
-    // Simulate 768-dim embeddings (Gemini embedding size)
     const a = Array.from({ length: 768 }, (_, i) => Math.sin(i));
     const b = Array.from({ length: 768 }, (_, i) => Math.sin(i + 0.1));
     const sim = cosineSimilarity(a, b);
-    // Slightly shifted sine waves should be very similar
     expect(sim).toBeGreaterThan(0.95);
     expect(sim).toBeLessThanOrEqual(1);
   });
@@ -51,7 +35,7 @@ describe("cosineSimilarity", () => {
 
   it("is magnitude-invariant", () => {
     const a = [1, 2, 3];
-    const b = [2, 4, 6]; // a * 2
+    const b = [2, 4, 6];
     expect(cosineSimilarity(a, b)).toBeCloseTo(1, 10);
   });
 

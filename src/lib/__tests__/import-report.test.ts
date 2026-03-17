@@ -1,92 +1,12 @@
 import { describe, it, expect } from "vitest";
+import {
+  generateDeterministicWarnings,
+  parseReportSections,
+} from "@/lib/ai/import-report";
 import type {
   CertificationRequirement,
   AntiDumpingDuty,
-  DGFTLicensing,
 } from "@/types/compliance-report";
-
-// We test generateDeterministicWarnings by replicating the logic from
-// import-report.ts:100-158 since it's not exported. This tests the
-// deterministic (non-LLM) warning generation which is the most critical
-// correctness path.
-function generateDeterministicWarnings(
-  certifications: CertificationRequirement[],
-  antiDumpingDuties: AntiDumpingDuty[],
-  dgftLicensing: DGFTLicensing | null,
-  originCountry: string
-): string[] {
-  const warnings: string[] = [];
-
-  if (dgftLicensing?.classification === "restricted") {
-    warnings.push(
-      "⚠ IMPORT LICENSE REQUIRED: This product is classified as 'Restricted' under DGFT ITC(HS). You must obtain an import license before shipment. Importing without a valid license will result in detention and possible confiscation."
-    );
-  }
-
-  if (dgftLicensing?.classification === "prohibited") {
-    warnings.push(
-      "⚠ IMPORT PROHIBITED: This product is classified as 'Prohibited' under DGFT ITC(HS). Import is not permitted."
-    );
-  }
-
-  if (dgftLicensing?.scometListed) {
-    warnings.push(
-      "⚠ SCOMET LISTED: This product is on the Special Chemicals, Organisms, Materials, Equipment and Technologies list. Additional DGFT permissions required."
-    );
-  }
-
-  if (dgftLicensing?.eprRequired) {
-    warnings.push(
-      "⚠ EPR REQUIRED: Extended Producer Responsibility registration with CPCB is required for this product."
-    );
-  }
-
-  for (const cert of certifications) {
-    if (cert.preShipmentRequired) {
-      warnings.push(
-        `⚠ PRE-SHIPMENT CERTIFICATION: ${cert.body} ${cert.name} certification must be obtained BEFORE goods are shipped. Arrange this with the supplier/manufacturer.`
-      );
-    }
-  }
-
-  for (const cert of certifications) {
-    if (cert.isMandatory && !cert.preShipmentRequired) {
-      warnings.push(
-        `⚠ MANDATORY CERTIFICATION: ${cert.body} ${cert.name} is required. Risk if missing: ${cert.riskIfMissing}`
-      );
-    }
-  }
-
-  const relevantAD = antiDumpingDuties.filter(
-    (a) => a.originCountry.toLowerCase() === originCountry.toLowerCase()
-  );
-  for (const ad of relevantAD) {
-    warnings.push(
-      `⚠ ANTI-DUMPING DUTY APPLIES: ${ad.dutyType} duty of ${ad.dutyAmount} from ${ad.originCountry} per ${ad.notificationNo}`
-    );
-  }
-
-  return warnings;
-}
-
-// Test the regex parsing logic from import-report.ts:71-92
-function parseReportSections(response: string) {
-  const riskMatch = response.match(
-    /## RISK SUMMARY\s*([\s\S]*?)(?=## REGULATORY NOTES|$)/i
-  );
-  const notesMatch = response.match(/## REGULATORY NOTES\s*([\s\S]*?)$/i);
-
-  const riskSummary = riskMatch?.[1]?.trim() || "";
-  let regulatoryNotes =
-    notesMatch?.[1]?.trim() || "Detailed regulatory notes pending.";
-  regulatoryNotes = regulatoryNotes
-    .split("\n")
-    .filter((line) => !line.match(/not covered in current dataset/i))
-    .join("\n")
-    .trim();
-
-  return { riskSummary, regulatoryNotes };
-}
 
 describe("generateDeterministicWarnings", () => {
   it("returns empty array when no issues", () => {
@@ -159,7 +79,7 @@ describe("generateDeterministicWarnings", () => {
     expect(result).toEqual([]);
   });
 
-  it("warns on pre-shipment certifications first", () => {
+  it("warns on pre-shipment certifications before mandatory ones", () => {
     const certs: CertificationRequirement[] = [
       {
         body: "BIS",
@@ -221,7 +141,7 @@ describe("generateDeterministicWarnings", () => {
   });
 });
 
-describe("parseReportSections (regex parsing)", () => {
+describe("parseReportSections", () => {
   it("parses well-formed LLM response", () => {
     const response = `## RISK SUMMARY
 This product carries moderate compliance risk.
