@@ -12,7 +12,7 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-34">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-26 md:py-37">
         <div className="max-w-3xl">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
             Policy. Regulatory.{" "}

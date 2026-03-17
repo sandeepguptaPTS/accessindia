@@ -1,6 +1,6 @@
 export function WhyUsSection() {
   return (
-    <section className="py-16 md:py-24 bg-[var(--light-bg)] border-t border-gray-300/50">
+    <section className="py-16 md:py-24 bg-[var(--light-bg)] border-t-2 border-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-serif text-3xl md:text-4xl text-[var(--navy)] mb-10">
           Why Us
