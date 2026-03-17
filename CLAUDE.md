@@ -22,7 +22,7 @@ src/
     layout.tsx                  # Root layout (header/footer/chat widget)
     search/page.tsx             # Compliance Search (Beta) — 3-step wizard
     about/page.tsx              # About Us (team, Omega QMS, ARM partnership)
-    services/page.tsx           # 2 featured service cards + 3 accordion practices
+    services/page.tsx           # 5 uniform service cards with "Get a Quote" CTAs
     vision/page.tsx             # Vision statement + 7 numbered values (manifesto style) + messages
     contact/page.tsx            # Contact form + sidebar info + Google Maps link
     import-navigator/page.tsx   # Redirects to /search
@@ -68,7 +68,7 @@ scripts/
 |-------|------|-------------|
 | `/` | Static (server) | Homepage — hero, trust bar, services overview, numbers, clients, backed-by, search CTA |
 | `/about` | Static (server) | Company info, team bios, Omega QMS foundation, ARM legal partnership |
-| `/services` | Static (server) | 2 featured cards + 3 accordion practices with "Get a Quote" CTAs |
+| `/services` | Static (server) | 5 uniform service cards with "Get a Quote" CTAs |
 | `/vision` | Static (server) | Vision statement, 7 numbered values (manifesto style), messages |
 | `/contact` | Client | Contact form with service pre-fill via `?service=` param |
 | `/search` | Client | Compliance Search (Beta) — 3-step wizard, accepts `?q=` pre-fill |

@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Landmark, ShieldCheck, Scale, FileText, Receipt } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+
 
 export const metadata: Metadata = {
   title: "Services — Access India AI Private Limited",
@@ -138,10 +133,6 @@ function ServiceCard({ service }: { service: typeof SERVICES[number] }) {
 }
 
 export default function ServicesPage() {
-  // First 2 services are featured (always visible), rest in accordion
-  const featured = SERVICES.slice(0, 2);
-  const remaining = SERVICES.slice(2);
-
   return (
     <div>
       {/* Hero */}
@@ -155,45 +146,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Featured Services */}
+      {/* All Services */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          {featured.map((service) => (
+          {SERVICES.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}
-
-          {/* Remaining Services — collapsible */}
-          <div>
-            <h2 className="font-serif text-2xl text-[var(--navy)] mb-4">
-              More Practices
-            </h2>
-            <Accordion type="multiple" className="space-y-3">
-              {remaining.map((service) => {
-                const Icon = service.icon;
-                return (
-                  <AccordionItem
-                    key={service.slug}
-                    value={service.slug}
-                    className="border border-gray-200 rounded-lg px-6 data-[state=open]:border-[var(--gold)]/50"
-                  >
-                    <AccordionTrigger className="hover:no-underline py-5 hover:bg-[var(--light-bg)] -mx-6 px-6 rounded-lg transition-colors [&>svg]:text-[var(--gold)] [&>svg]:size-5">
-                      <div className="flex items-center gap-4 text-left">
-                        <div className="w-10 h-10 bg-[var(--navy)] rounded-lg flex items-center justify-center shrink-0">
-                          <Icon className="w-5 h-5 text-[var(--gold)]" />
-                        </div>
-                        <span className="text-lg font-semibold text-[var(--navy)]">
-                          {service.title}
-                        </span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-6">
-                      <ServiceBody service={service} />
-                    </AccordionContent>
-                  </AccordionItem>
-                );
-              })}
-            </Accordion>
-          </div>
         </div>
       </section>
 
