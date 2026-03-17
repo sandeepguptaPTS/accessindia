@@ -386,7 +386,7 @@ export function ComplianceReportView({ report }: ComplianceReportProps) {
             <div className="mt-4 flex gap-3 justify-center no-print">
               <a
                 href={`mailto:help@accessindia.ai?subject=${encodeURIComponent(`Import Advisory Request — ${report.productDescription} (HS ${report.hsCode}) from ${report.originCountry}`)}`}
-                className="px-4 py-2 bg-[var(--gold)] text-[var(--navy)] rounded-lg text-sm font-medium hover:bg-[#c49a3a] transition-colors inline-block"
+                className="px-4 py-2 bg-[var(--gold)] text-[var(--navy)] rounded-lg text-sm font-medium hover:bg-[var(--gold-hover)] transition-colors inline-block"
               >
                 Book a Consultation
               </a>

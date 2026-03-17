@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-// Extract cosineSimilarity for direct testing since it's not exported.
-// We replicate the exact implementation from vector-search.ts:12-22.
+// Replicate the implementation from vector-search.ts:12-23 (with zero-vector guard).
 function cosineSimilarity(a: number[], b: number[]): number {
   let dotProduct = 0;
   let normA = 0;
@@ -11,7 +10,9 @@ function cosineSimilarity(a: number[], b: number[]): number {
     normA += a[i] * a[i];
     normB += b[i] * b[i];
   }
-  return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+  const denom = Math.sqrt(normA) * Math.sqrt(normB);
+  if (denom === 0) return 0;
+  return dotProduct / denom;
 }
 
 describe("cosineSimilarity", () => {
@@ -54,18 +55,19 @@ describe("cosineSimilarity", () => {
     expect(cosineSimilarity(a, b)).toBeCloseTo(1, 10);
   });
 
-  // Critical bug: zero vectors produce NaN (vector-search.ts:21)
-  it("returns NaN for zero vector (documents the bug)", () => {
+  it("returns 0 for zero vector (guarded against NaN)", () => {
     const zero = [0, 0, 0];
     const normal = [1, 2, 3];
     const result = cosineSimilarity(zero, normal);
-    expect(Number.isNaN(result)).toBe(true);
+    expect(result).toBe(0);
+    expect(Number.isNaN(result)).toBe(false);
   });
 
-  it("returns NaN when both vectors are zero", () => {
+  it("returns 0 when both vectors are zero", () => {
     const zero = [0, 0, 0];
     const result = cosineSimilarity(zero, zero);
-    expect(Number.isNaN(result)).toBe(true);
+    expect(result).toBe(0);
+    expect(Number.isNaN(result)).toBe(false);
   });
 
   it("handles very small values without overflow to zero", () => {

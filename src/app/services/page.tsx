@@ -102,7 +102,7 @@ function ServiceBody({ service }: { service: typeof SERVICES[number] }) {
       <div className="mt-6">
         <Link
           href={`/contact?service=${service.slug}`}
-          className="inline-flex items-center px-5 py-2.5 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[#c49a3a] transition-colors text-sm"
+          className="inline-flex items-center px-5 py-2.5 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[var(--gold-hover)] transition-colors text-sm"
         >
           Get a Quote
         </Link>

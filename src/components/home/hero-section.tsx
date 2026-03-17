@@ -27,7 +27,7 @@ export function HeroSection() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/services"
-              className="px-6 py-3 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[#c49a3a] transition-colors"
+              className="px-6 py-3 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[var(--gold-hover)] transition-colors"
             >
               Explore Our Services
             </Link>

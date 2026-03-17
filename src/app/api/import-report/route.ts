@@ -95,7 +95,11 @@ export async function POST(request: NextRequest) {
       originCountry,
       hsCode: finalHsCode,
       hsDescription: finalHsDescription,
-      dutyBreakdown: context.dutyBreakdown!,
+      dutyBreakdown: context.dutyBreakdown ?? {
+        assessableValue: 0, currency: "INR", bcdRate: 0, bcdAmount: 0,
+        aidcRate: 0, aidcAmount: 0, swsRate: 0, swsAmount: 0,
+        igstRate: 0, igstAmount: 0, compensationCess: 0, totalDuty: 0, effectiveDutyRate: 0,
+      },
       ftaOptions: context.ftaOptions,
       certifications: context.certifications,
       antiDumpingDuties: context.antiDumpingDuties,

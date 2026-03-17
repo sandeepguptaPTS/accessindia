@@ -145,7 +145,7 @@ export function ChatWidget() {
     <div className="fixed bottom-6 right-6 z-50 print:hidden">
       {/* Chat panel */}
       {open && (
-        <div className="mb-3 w-[360px] max-h-[520px] bg-white rounded-xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
+        <div className="mb-3 w-[calc(100vw-2rem)] sm:w-[360px] max-h-[520px] bg-white rounded-xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
           {/* Header */}
           <div className="bg-[var(--navy)] text-white px-4 py-3">
             <p className="text-sm font-semibold">AccessIndia.ai</p>
@@ -370,7 +370,7 @@ export function ChatWidget() {
                     <button
                       type="submit"
                       disabled={!leadEmail}
-                      className="p-2 bg-[var(--gold)] text-[var(--navy)] rounded-lg hover:bg-[#c49a3a] disabled:opacity-40 transition-colors"
+                      className="p-2 bg-[var(--gold)] text-[var(--navy)] rounded-lg hover:bg-[var(--gold-hover)] disabled:opacity-40 transition-colors"
                     >
                       <Send className="w-4 h-4" />
                     </button>
@@ -420,7 +420,7 @@ export function ChatWidget() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-14 h-14 bg-[var(--gold)] text-[var(--navy)] rounded-full shadow-lg hover:bg-[#c49a3a] transition-all flex items-center justify-center hover:scale-105 cursor-pointer"
+        className="w-14 h-14 bg-[var(--gold)] text-[var(--navy)] rounded-full shadow-lg hover:bg-[var(--gold-hover)] transition-all flex items-center justify-center hover:scale-105 cursor-pointer"
         aria-label={open ? "Close chat" : "Open chat"}
       >
         {open ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
