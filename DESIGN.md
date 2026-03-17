@@ -36,7 +36,7 @@
 | Token | Hex | Usage |
 |-------|-----|-------|
 | Navy | `#0D1B3E` | Primary surfaces (hero, footer), heading text, cards |
-| Deep Blue | `#1A3A6B` | Secondary surfaces, hover states, CTA variants |
+| Deep Blue | `#1A3A6B` | Hover states, CTA variants (no longer used for trust bar) |
 | Gold | `#D4A843` | Accent — CTAs, focus rings, badges, value headings |
 | Gold Hover | `#c49a3a` | Gold button hover state |
 | Light BG | `#F4F6FA` | Alternating section backgrounds |
@@ -86,7 +86,9 @@ Not implemented. Not needed for this product — the audience (foreign CFOs) use
 - **Approach:** Grid-disciplined
 - **Grid:** Single column for content pages, 2-3 columns for homepage feature sections
 - **Max content width:** `max-w-5xl` (1024px) for text content (`max-w-6xl` for contact), `max-w-7xl` (1280px) for full-width homepage sections
-- **Hero pattern:** Navy background, left-aligned h1 (serif text-4xl md:text-5xl), subtitle (text-lg text-white/70 max-w-2xl), consistent `py-16 md:py-20` padding
+- **Header:** Light frosted glass (`bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-200/50`), sticky. Dark navy text for nav links, navy "Get a Quote" CTA. Readable on all background colors.
+- **Hero pattern:** Navy background, left-aligned h1 (serif text-4xl md:text-5xl), subtitle (text-lg text-white/70 max-w-2xl). Hero + trust bar wrapped in `min-h-[calc(100dvh-4rem)]` flex container so both fit within first viewport.
+- **Trust bar:** Same navy background as hero, separated by subtle gold border (`border-t border-[var(--gold)]/20`). Sits at bottom of first viewport.
 - **Section alternation:** White → Light BG → White (avoid stacking navy sections)
 - **Border radius:**
   - sm: 4px (badges inline)
@@ -130,3 +132,5 @@ Defined in `globals.css` `:root`:
 | 2026-03-17 | No font changes | Georgia + Inter pairing is strong. Georgia reads as authoritative without being stuffy. Inter is already loaded and works well at all sizes. |
 | 2026-03-17 | Semantic colors formalized | Success/Warning/Error/Info were used ad-hoc via Tailwind classes. Now documented as part of the system. |
 | 2026-03-17 | Hero pattern standardized | All pages now use consistent left-aligned, max-w-5xl, py-16 md:py-20 hero pattern. |
+| 2026-03-18 | Header → frosted glass | Switched from solid navy to light frosted glass (`bg-white/80 backdrop-blur-xl`) with dark navy text. Readable on all background colors (dark hero, white sections, light CTA areas). |
+| 2026-03-18 | Hero + trust bar viewport fit | Wrapped hero and trust bar in viewport-height flex container. Trust bar background changed from deep-blue to navy with gold border for seamless look. |
