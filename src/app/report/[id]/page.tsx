@@ -1,4 +1,5 @@
 import { getDB } from "@/lib/db/client";
+import { usePostgres, getReport } from "@/lib/db/postgres";
 import { ComplianceReportView } from "@/components/import-navigator/compliance-report";
 import type { ComplianceReport } from "@/types/compliance-report";
 import type { DBGeneratedReport } from "@/types/database";
@@ -10,10 +11,15 @@ interface ReportPageProps {
 
 export default async function ReportPage({ params }: ReportPageProps) {
   const { id } = await params;
-  const db = getDB();
-  const row = db
-    .prepare("SELECT * FROM generated_reports WHERE id = ?")
-    .get(id) as DBGeneratedReport | undefined;
+  let row: DBGeneratedReport | undefined;
+  if (usePostgres) {
+    row = (await getReport(id)) ?? undefined;
+  } else {
+    const db = getDB();
+    row = db
+      .prepare("SELECT * FROM generated_reports WHERE id = ?")
+      .get(id) as DBGeneratedReport | undefined;
+  }
 
   if (!row) {
     return (

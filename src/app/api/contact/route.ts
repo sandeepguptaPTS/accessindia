@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDB } from "@/lib/db/client";
+import { usePostgres, saveContactLead } from "@/lib/db/postgres";
 
 // In-memory rate limiter with periodic cleanup
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -84,32 +85,43 @@ export async function POST(request: NextRequest) {
     };
 
     // Store in database
-    const db = getDB();
+    if (usePostgres) {
+      await saveContactLead(
+        sanitized.name,
+        sanitized.email,
+        sanitized.phone,
+        sanitized.company,
+        sanitized.service,
+        sanitized.message
+      );
+    } else {
+      const db = getDB();
 
-    // Auto-create table if needed
-    db.exec(`
-      CREATE TABLE IF NOT EXISTS contact_leads (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        email TEXT NOT NULL,
-        phone TEXT NOT NULL DEFAULT '',
-        company TEXT NOT NULL DEFAULT '',
-        service TEXT NOT NULL DEFAULT '',
-        message TEXT NOT NULL,
-        created_at TEXT NOT NULL DEFAULT (datetime('now'))
-      )
-    `);
+      // Auto-create table if needed
+      db.exec(`
+        CREATE TABLE IF NOT EXISTS contact_leads (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          name TEXT NOT NULL,
+          email TEXT NOT NULL,
+          phone TEXT NOT NULL DEFAULT '',
+          company TEXT NOT NULL DEFAULT '',
+          service TEXT NOT NULL DEFAULT '',
+          message TEXT NOT NULL,
+          created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        )
+      `);
 
-    db.prepare(
-      `INSERT INTO contact_leads (name, email, phone, company, service, message) VALUES (?, ?, ?, ?, ?, ?)`
-    ).run(
-      sanitized.name,
-      sanitized.email,
-      sanitized.phone,
-      sanitized.company,
-      sanitized.service,
-      sanitized.message
-    );
+      db.prepare(
+        `INSERT INTO contact_leads (name, email, phone, company, service, message) VALUES (?, ?, ?, ?, ?, ?)`
+      ).run(
+        sanitized.name,
+        sanitized.email,
+        sanitized.phone,
+        sanitized.company,
+        sanitized.service,
+        sanitized.message
+      );
+    }
 
     console.log("[Contact Lead]", {
       name: sanitized.name,
