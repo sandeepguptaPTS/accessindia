@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Building2, Scale, Award } from "lucide-react";
+import { Scale } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us — Access India AI Private Limited",
