@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Landmark, ShieldCheck, Scale } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const SERVICES = [
   {
@@ -27,35 +26,36 @@ export function WhatWeDoSection() {
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="mb-12">
           <h2 className="font-serif text-3xl md:text-4xl text-[var(--navy)]">
             What We Do
           </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-gray-600 max-w-2xl">
             Three core practices, one integrated approach to Indian regulatory compliance.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="space-y-6">
           {SERVICES.map((service) => {
             const Icon = service.icon;
             return (
-              <Card key={service.title} className="border-gray-200 hover:border-[var(--gold)] transition-colors">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-[var(--navy)] rounded-lg flex items-center justify-center mb-3">
-                    <Icon className="w-6 h-6 text-[var(--gold)]" />
-                  </div>
-                  <CardTitle className="text-lg text-[var(--navy)]">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-600">{service.description}</p>
-                </CardContent>
-              </Card>
+              <div
+                key={service.title}
+                className="flex items-start gap-5 p-6 rounded-xl border border-gray-200 hover:border-[var(--gold)]/50 transition-colors"
+              >
+                <div className="w-10 h-10 bg-[var(--navy)] rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <Icon className="w-5 h-5 text-[var(--gold)]" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg text-[var(--navy)]">{service.title}</h3>
+                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">{service.description}</p>
+                </div>
+              </div>
             );
           })}
         </div>
 
-        <div className="text-center mt-10">
+        <div className="mt-10">
           <Link
             href="/services"
             className="inline-flex items-center px-6 py-3 bg-[var(--navy)] text-white font-semibold rounded-lg hover:bg-[var(--deep-blue)] transition-colors"
