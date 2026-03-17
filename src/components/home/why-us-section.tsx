@@ -17,10 +17,9 @@ export function WhyUsSection() {
               We Come from the System
             </h3>
             <p className="text-white/70 leading-relaxed">
-              Our founders and advisors are former customs officers, trade policy makers,
-              and regulatory insiders. We don&apos;t just understand compliance — we helped
-              build the frameworks. That means faster resolution, fewer surprises,
-              and advice grounded in how the system actually works.
+              Our leadership includes former customs officers, senior government
+              officials, and regulatory professionals with decades inside the
+              institutions you need to work with. We don&apos;t guess. We know.
             </p>
           </div>
 
@@ -31,8 +30,9 @@ export function WhyUsSection() {
                 100% Compliance, No Shortcuts
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Every recommendation we make is backed by current law, official
-                notifications, and deep regulatory knowledge. Your compliance is our reputation.
+                Every certification filed correctly. Every duty computed
+                accurately. Every licence obtained before you ship. Zero
+                detention. Zero penalties. Your interests protected.
               </p>
             </div>
 
@@ -41,9 +41,10 @@ export function WhyUsSection() {
                 End-to-End, Not Piecemeal
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                From HS classification to customs clearance, from BIS certification to GST
-                litigation — we handle the entire compliance chain so you don&apos;t coordinate
-                between five different consultants.
+                Most consultants do one thing. We do everything — from policy
+                advocacy to product certification at the factory to customs
+                clearance at the port. One firm. One relationship. Complete
+                coverage.
               </p>
             </div>
           </div>

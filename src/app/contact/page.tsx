@@ -80,9 +80,9 @@ function ContactForm() {
     <div>
       {/* Hero */}
       <section className="bg-[var(--navy)] py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-serif text-4xl md:text-5xl text-white">Contact Us</h1>
-          <p className="mt-4 text-lg text-white/70 max-w-2xl">
+          <p className="mt-4 text-lg text-white/70">
             Let&apos;s discuss how we can help your business navigate Indian import compliance.
           </p>
         </div>
@@ -90,7 +90,7 @@ function ContactForm() {
 
       {/* Content */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Form */}
             <div className="lg:col-span-2">

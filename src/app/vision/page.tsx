@@ -1,83 +1,87 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Vision & Values — Access India AI Private Limited",
+  title: "Vision & Values — Access India AI",
   description:
-    "Our vision for transparent, predictable Indian import compliance. Built on integrity, expertise, and service.",
+    "To build India's most trusted import compliance partner — where every answer is accurate, every certification is valid, and every shipment clears without surprises.",
 };
 
 const VALUES = [
   {
-    title: "Integrity First",
-    description: "100% compliance, no shortcuts, no grey areas. We protect your business by doing things right.",
+    title: "Compliance is non-negotiable.",
+    description: "We will never cut corners to save time or money.",
   },
   {
-    title: "Transparency",
-    description: "Clear communication, honest assessments, no hidden fees. You always know where you stand.",
+    title: "We give hard advice.",
+    description:
+      "If your product cannot be imported legally, we will tell you on day one.",
   },
   {
-    title: "Deep Expertise",
-    description: "We come from the system. Our knowledge isn't theoretical — it's built from decades inside Indian regulatory agencies.",
+    title: "Ethics over revenue.",
+    description:
+      "We will walk away from business before we compromise on what is right.",
   },
   {
-    title: "Client Partnership",
-    description: "We succeed when you succeed. Every engagement is a partnership, not a transaction.",
+    title: "We come from the bureaucracy and we respect it.",
+    description:
+      "There is no greater sacrifice for society than honest public service. Our work will always honour that institution.",
   },
   {
-    title: "Accessibility",
-    description: "Regulatory compliance shouldn't be a privilege. We make India's import system navigable for businesses of all sizes.",
+    title: "Government is not the adversary.",
+    description:
+      "We work within the system, not around it. Our policy work must create real value without hurting the interests of the Indian state.",
   },
   {
-    title: "Accountability",
-    description: "We stand behind our advice. Every recommendation is backed by current law and official notifications.",
+    title: "We build networks, not dependencies.",
+    description:
+      "Clients, customs agents, regulatory consultants — all on one platform, all with shared standards.",
   },
   {
-    title: "Service Excellence",
-    description: "End-to-end means end-to-end. We don't hand off half-done work or leave clients stranded mid-process.",
+    title: "Our people come first.",
+    description:
+      "Every partner and team member deserves a restful, healthy, and happy life.",
   },
 ];
 
 const MESSAGES = [
   {
     to: "To Our Clients",
-    text: "You trusted us with your business — the most valuable thing you have. We take that trust seriously. Every classification, every certification, every duty calculation carries your name and ours. We will never compromise on accuracy to save time, or on compliance to save cost. Your success in India is our only measure of success.",
+    text: "We are a new platform built by old hands — former customs officers and industry veterans who spent years inside the system you are trying to navigate. We are more concerned about your business\u2019s interests and liabilities than our own profits. If we take longer, it is because we are being thorough. We would rather delay a report than give you a wrong one. 100% compliant results. Every time.",
   },
   {
     to: "To Our Delivery Partners",
-    text: "You are the backbone of our service. Every customs broker, every certification lab, every logistics partner in our network represents AccessIndia to our clients. We choose partners who share our values: precision, reliability, and absolute integrity. Together, we make Indian imports work.",
+    text: "There will be times when you feel we can make a quick buck by choosing a shortcut. Please re-think. This is not the value statement you, we, or our children would want to live by. We chose the harder path on purpose. Stay on it with us. The earnings will grow — but only if the foundation is honest.",
   },
   {
     to: "To Our Team",
-    text: "You are the reason our clients trust us. Your expertise, your dedication, your willingness to dig into the details — that's what makes AccessIndia different. We invest in your growth because your knowledge is our greatest asset. Stay curious, stay rigorous, stay kind.",
+    text: "We may not have the best offices or the biggest budgets. But we will stand by you in every phase of life. More than profits, we care about your health, your happiness, and your peace of mind. Do good work. Go home on time. Sleep well. The rest will follow.",
   },
   {
     to: "To Every Government Officer Who Has Helped Us",
-    text: "India's regulatory system works because of dedicated public servants who take their responsibilities seriously. We have been fortunate to learn from, and work alongside, officers who embody the best of Indian governance. Your guidance has shaped everything we do. Thank you.",
+    text: "Thank you. In today\u2019s world, what you have done — listening to us, guiding us, giving us your time — is rarer than you think. The karma of honest public service gives back manifold. We have seen it. We believe in it. We will never misuse the trust you have placed in us.",
   },
 ];
 
 export default function VisionPage() {
   return (
     <div>
-      {/* Vision Statement */}
-      <section className="bg-[var(--navy)] py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
-            Making Indian import compliance{" "}
-            <span className="text-[var(--gold)]">transparent, predictable,</span>{" "}
-            and accessible.
+      {/* Hero */}
+      <section className="bg-[var(--navy)] py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="font-serif text-4xl md:text-5xl text-white">
+            Vision &amp; Values
           </h1>
-          <p className="mt-8 text-lg text-white/60 max-w-2xl mx-auto">
-            We envision a world where importing into India is as straightforward
-            as importing into any developed market — with clear rules, fair
-            enforcement, and expert guidance available to every business.
+          <p className="mt-4 text-lg text-white/70">
+            To build India&apos;s most trusted import compliance partner — where
+            every answer is accurate, every certification is valid, and every
+            shipment clears without surprises.
           </p>
         </div>
       </section>
 
       {/* Values — numbered manifesto style */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl md:text-4xl text-[var(--navy)] mb-12">
             Our Values
           </h2>
@@ -88,8 +92,12 @@ export default function VisionPage() {
                   {i + 1}
                 </span>
                 <div>
-                  <h3 className="font-semibold text-xl text-[var(--navy)] mb-1">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                  <h3 className="font-semibold text-xl text-[var(--navy)] mb-1">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
               </li>
             ))}
@@ -99,13 +107,13 @@ export default function VisionPage() {
 
       {/* Messages */}
       <section className="py-16 md:py-20 bg-[var(--light-bg)]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {MESSAGES.map((msg) => (
             <div key={msg.to}>
               <p className="text-sm font-semibold text-[var(--gold)] uppercase tracking-wider mb-3">
                 {msg.to}
               </p>
-              <blockquote className="font-serif text-lg md:text-xl text-[var(--navy)] leading-relaxed">
+              <blockquote className="font-serif text-lg md:text-xl text-[var(--navy)] leading-relaxed italic">
                 &ldquo;{msg.text}&rdquo;
               </blockquote>
             </div>

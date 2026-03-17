@@ -5,6 +5,7 @@ import { buildComplianceContext } from "@/lib/rag/context-builder";
 import { synthesizeComplianceReport } from "@/lib/ai/import-report";
 import { loadHSCodeEmbeddings } from "@/lib/rag/vector-search";
 import { getDB } from "@/lib/db/client";
+import { usePostgres, saveReport } from "@/lib/db/postgres";
 import type { ComplianceReport, ImportReportRequest } from "@/types/compliance-report";
 
 export async function POST(request: NextRequest) {
@@ -112,16 +113,26 @@ export async function POST(request: NextRequest) {
     };
 
     // Step 5: Save to database
-    const db = getDB();
-    db.prepare(
-      "INSERT INTO generated_reports (id, tool, input_data, report_content, created_at) VALUES (?, ?, ?, ?, ?)"
-    ).run(
-      report.id,
-      "import-navigator",
-      JSON.stringify(body),
-      JSON.stringify(report),
-      report.generatedAt
-    );
+    if (usePostgres) {
+      await saveReport(
+        report.id,
+        "import-navigator",
+        JSON.stringify(body),
+        JSON.stringify(report),
+        report.generatedAt
+      );
+    } else {
+      const db = getDB();
+      db.prepare(
+        "INSERT INTO generated_reports (id, tool, input_data, report_content, created_at) VALUES (?, ?, ?, ?, ?)"
+      ).run(
+        report.id,
+        "import-navigator",
+        JSON.stringify(body),
+        JSON.stringify(report),
+        report.generatedAt
+      );
+    }
 
     return NextResponse.json({ status: "complete", report });
   } catch (error) {

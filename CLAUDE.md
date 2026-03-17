@@ -107,10 +107,17 @@ vercel --prod            # Deploy to Vercel
 
 ## Environment
 
-Single env var required in `.env.local`:
+Required in `.env.local`:
 ```
 GEMINI_API_KEY=your_key_here
 ```
+
+On Vercel, also set (auto-populated by Vercel Postgres Storage):
+```
+POSTGRES_URL=postgres://...
+```
+
+**Dual-DB architecture:** Reference data (HS codes, duties, FTAs, certs) stays in SQLite (re-seeded on cold start from CSV/JSON). User-generated data (`generated_reports`, `contact_leads`) uses Postgres when `POSTGRES_URL` is set (Vercel), SQLite otherwise (local dev).
 
 ## Data Expansion
 
@@ -154,3 +161,9 @@ To add more HS codes or duty rates:
   - `/setup-browser-cookies` — Import cookies from real browser
   - `/retro` — Weekly engineering retrospective
   - `/document-release` — Post-ship documentation update
+
+## Design System
+Always read DESIGN.md before making any visual or UI decisions.
+All font choices, colors, spacing, and aesthetic direction are defined there.
+Do not deviate without explicit user approval.
+In QA mode, flag any code that doesn't match DESIGN.md.

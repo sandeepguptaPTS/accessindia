@@ -6,25 +6,25 @@ const SERVICES = [
     icon: Landmark,
     title: "Policy & Government Interface",
     description:
-      "We represent businesses before Indian government agencies — CBIC, DGFT, BIS, FSSAI, CDSCO, and more. From pre-policy consultations to real-time regulatory response, we speak the language of Indian governance.",
+      "Central Government representations, ministry-level coordination, PLI advisory, trade remedy support, industry body submissions. We have the institutional relationships. You get the access.",
   },
   {
     icon: ShieldCheck,
-    title: "Import Compliance End-to-End",
+    title: "Import Compliance \u2014 End to End",
     description:
-      "HS classification, duty optimization, BIS/FSSAI/WPC certification management, DGFT licensing, and customs clearance. We handle everything from the first notification to the last customs stamp.",
+      "Product certifications, BIS, QCO, food safety, wireless approvals, drug & device licensing, DGFT policy, customs duties, FTA optimisation, IEC/GST setup, CHA coordination. Every agency. Every clearance.",
   },
   {
     icon: Scale,
     title: "Customs & Trade Advisory",
     description:
-      "FTA utilization, anti-dumping duty analysis, safeguard duty responses, SVB matters, customs audits, and trade litigation. We protect your margins while ensuring full compliance.",
+      "HS classification, valuation, SVB, anti-dumping and trade remedy, AEO certification, MOOWR, FDI structuring. Complex problems solved by people who wrote the rules.",
   },
 ];
 
 export function WhatWeDoSection() {
   return (
-    <section className="py-16 md:py-20 bg-[var(--light-bg)]">
+    <section className="py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="font-serif text-3xl md:text-4xl text-[var(--navy)]">

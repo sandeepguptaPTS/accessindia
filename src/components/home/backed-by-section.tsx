@@ -10,26 +10,22 @@ export function BackedBySection() {
           <h2 className="font-serif text-3xl md:text-4xl text-[var(--navy)]">
             Backed By
           </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Two decades of institutional knowledge powering our compliance practice.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <Card className="border-[var(--gold)]/30 hover:border-[var(--gold)] transition-colors">
             <CardHeader>
               <div className="w-12 h-12 bg-[var(--navy)] rounded-lg flex items-center justify-center mb-3">
                 <Building className="w-6 h-6 text-[var(--gold)]" />
               </div>
-              <CardTitle className="text-lg text-[var(--navy)]">Omega QMS</CardTitle>
+              <CardTitle className="text-lg text-[var(--navy)]">Omega QMS Private Limited</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-600 mb-3">
-                Founded in 2000, Omega QMS has been at the forefront of quality
-                management and regulatory compliance for over 25 years. Our deep
-                expertise in Indian standards, certification systems, and
-                government processes forms the backbone of AccessIndia&apos;s
-                compliance practice.
+                Founded in 2000. 25 years advising multinational corporations,
+                global manufacturers, and industry bodies on India&apos;s
+                regulatory framework. Policy interface with Central Government
+                ministries. End-to-end import compliance across 10+ agencies.
               </p>
               <Link
                 href="/about"
@@ -49,10 +45,11 @@ export function BackedBySection() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-600 mb-3">
-                Our legal partnership with the Law Chambers of ARM brings
-                specialized expertise in customs law, GST litigation, trade
-                remedies, and regulatory advocacy. Together, we offer a
-                compliance-to-litigation continuum that few firms can match.
+                Tax &amp; Knowledge Partner: Law Chambers of Arjun Raghavendra M
+                (ARM) — a multidisciplinary practice led by former Indian
+                Revenue Service officers. Tax litigation before the Supreme
+                Court, High Courts, and all Tribunals. GST policy drafting.
+                Foreign trade disputes.
               </p>
               <a
                 href="https://lawchambersofarm.com"

@@ -99,24 +99,25 @@ function SearchContent() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-[var(--navy)] py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-2">
-            <h1 className="font-serif text-3xl md:text-4xl text-white">
+      <section className="bg-[var(--navy)] py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3">
+            <h1 className="font-serif text-4xl md:text-5xl text-white">
               Compliance Search
             </h1>
             <Badge className="bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold)]">
               Beta
             </Badge>
           </div>
-          <p className="text-white/70">
-            264 regulatory checks across 19 government sources. Enter your product
-            details to get a comprehensive Indian import compliance report.
+          <p className="mt-4 text-lg text-white/70">
+            Enter your product details to get a complete, structured Indian
+            import compliance report — covering duties, certifications, process
+            registrations, licensing, and real risks.
           </p>
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto px-4 py-8">
 
       <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg text-xs text-amber-700">
         Beta version. Data is indicative. Verify with official sources before
@@ -193,7 +194,7 @@ function SearchContent() {
 export default function SearchPage() {
   return (
     <Suspense fallback={
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="animate-pulse space-y-4">
           <div className="h-8 bg-gray-200 rounded w-64" />
           <div className="h-4 bg-gray-200 rounded w-96" />
