@@ -1,0 +1,85 @@
+code,description,chapter,heading,unit
+0409.00,Natural honey,04,0409,KGS
+0713.10,Dried peas (Pisum sativum),07,0713,KGS
+0713.20,Dried chickpeas (garbanzos),07,0713,KGS
+0901.11,Coffee not roasted not decaffeinated,09,0901,KGS
+0901.21,Coffee roasted not decaffeinated,09,0901,KGS
+0902.10,Green tea in packages not exceeding 3 kg,09,0902,KGS
+0902.30,Black tea (fermented) in packages not exceeding 3 kg,09,0902,KGS
+1001.99,Wheat and meslin other than seed,10,1001,KGS
+1005.90,Maize (corn) other than seed,10,1005,KGS
+1006.30,Semi-milled or wholly milled rice,10,1006,KGS
+1507.10,Crude soybean oil,15,1507,KGS
+1511.10,Crude palm oil,15,1511,KGS
+1701.99,Refined cane or beet sugar,17,1701,KGS
+2101.11,Extracts essences and concentrates of coffee,21,2101,KGS
+2106.90,Food preparations not elsewhere specified,21,2106,KGS
+2202.10,Waters containing added sugar or sweetening,22,2202,LTR
+2204.21,Wine of fresh grapes in containers not exceeding 2 litres,22,2204,LTR
+2208.30,Whiskies,22,2208,LTR
+2208.40,Rum and other spirits from sugar cane,22,2208,LTR
+2709.00,Petroleum oils crude,27,2709,KGS
+2710.12,Light petroleum oils and preparations,27,2710,KGS
+2711.11,Liquefied natural gas,27,2711,KGS
+2917.36,Terephthalic acid and its salts,29,2917,KGS
+3004.90,Medicaments for therapeutic use in measured doses,30,3004,KGS
+3006.60,Chemical contraceptive preparations,30,3006,KGS
+3204.17,Synthetic organic pigments and preparations,32,3204,KGS
+3304.99,Beauty or make-up preparations,33,3304,KGS
+3401.11,Soap for toilet use,34,3401,KGS
+3808.91,Insecticides retail sale,38,3808,KGS
+3907.60,Polyethylene terephthalate (PET) in primary forms,39,3907,KGS
+3923.30,Carboys bottles flasks of plastics,39,3923,KGS
+4011.10,New pneumatic tyres of rubber for motor cars,40,4011,NOS
+4011.20,New pneumatic tyres for buses or lorries,40,4011,NOS
+4802.55,Paper and paperboard uncoated weighing 40-150 g/m2,48,4802,KGS
+5208.12,Plain weave cotton fabric unbleached exceeding 100 g/m2,52,5208,MTR
+5209.42,Denim fabric of cotton weighing more than 200 g/m2,52,5209,MTR
+5407.52,Dyed woven fabrics of polyester,54,5407,MTR
+6109.10,T-shirts singlets and vests of cotton knitted,61,6109,NOS
+6110.20,Jerseys pullovers cardigans of cotton knitted,61,6110,NOS
+6203.42,Trousers breeches of cotton for men,62,6203,NOS
+6204.62,Trousers breeches of cotton for women,62,6204,NOS
+6402.99,Footwear with outer soles of rubber or plastics,64,6402,PRS
+6403.99,Footwear with outer soles of rubber and uppers of leather,64,6403,PRS
+6911.10,Tableware and kitchenware of porcelain or china,69,6911,KGS
+7013.37,Drinking glasses of glass-ceramics,70,7013,KGS
+7113.19,Articles of jewellery of other precious metal,71,7113,KGS
+7207.11,Semi-finished products of iron with less than 0.25% carbon,72,7207,KGS
+7210.49,Flat-rolled products of iron zinc-coated,72,7210,KGS
+7304.31,Cold-drawn or cold-rolled seamless tubes of iron or steel,73,7304,KGS
+7318.15,Bolts and screws of iron or steel,73,7318,KGS
+7404.00,Copper waste and scrap,74,7404,KGS
+7601.10,Unwrought aluminium not alloyed,76,7601,KGS
+7606.12,Plates sheets of aluminium alloys exceeding 0.2 mm,76,7606,KGS
+8414.30,Compressors for refrigerating equipment,84,8414,NOS
+8414.80,Air pumps vacuum pumps and compressors,84,8414,NOS
+8418.10,Combined refrigerator-freezers,84,8418,NOS
+8418.40,Freezers of the upright type not exceeding 900 litres,84,8418,NOS
+8443.32,Printers for use with automatic data processing machines,84,8443,NOS
+8471.30,Portable automatic data processing machines (laptops),84,8471,NOS
+8471.49,Automatic data processing machines (desktop computers),84,8471,NOS
+8473.30,Parts and accessories of computers,84,8473,KGS
+8501.10,Electric motors of an output not exceeding 37.5 W,85,8501,NOS
+8504.40,Static converters (power supplies inverters),85,8504,NOS
+8507.60,Lithium-ion accumulators (batteries),85,8507,NOS
+8517.14,Smartphones and other telephones for cellular networks,85,8517,NOS
+8517.62,Machines for reception conversion and transmission of data (routers switches),85,8517,NOS
+8523.51,Solid-state non-volatile semiconductor storage devices (USB drives SSDs),85,8523,NOS
+8528.72,Television receivers colour with LCD LED display,85,8528,NOS
+8534.00,Printed circuits (PCBs),85,8534,NOS
+8541.40,Photosensitive semiconductor devices including solar cells,85,8541,NOS
+8542.31,Electronic integrated circuits processors,85,8542,NOS
+8544.42,Electric conductors fitted with connectors (cables),85,8544,KGS
+8703.23,Motor vehicles for transport of persons 1500-3000cc petrol,87,8703,NOS
+8703.32,Motor vehicles for transport of persons 1500-2500cc diesel,87,8703,NOS
+8708.10,Bumpers and parts for motor vehicles,87,8708,KGS
+8711.60,Electric motorcycles and cycles,87,8711,NOS
+9018.90,Instruments and appliances used in medical sciences,90,9018,NOS
+9021.10,Orthopaedic appliances including crutches,90,9021,NOS
+9401.80,Seats of bamboo or rattan,94,9401,NOS
+9403.60,Wooden furniture other than seats or office,94,9403,KGS
+9405.42,LED light sources other than filament lamp,94,9405,NOS
+9503.00,Tricycles scooters pedal cars dolls toys,95,9503,NOS
+9504.50,Video game consoles and machines,95,9504,NOS
+9506.62,Inflatable balls for sports,95,9506,NOS

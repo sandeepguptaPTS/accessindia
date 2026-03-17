@@ -1,0 +1,49 @@
+hs_code,agreement_code,agreement_name,preferential_bcd_rate,rules_of_origin
+0409.00,AIFTA,ASEAN-India Free Trade Agreement,45,Certificate of Origin Form AI
+0409.00,CEPA-UAE,India-UAE Comprehensive Economic Partnership Agreement,40,Certificate of Origin per CEPA rules
+0409.00,ECTA-AUS,India-Australia Economic Cooperation and Trade Agreement,40,Certificate of Origin Form AIECTA
+0901.11,AIFTA,ASEAN-India Free Trade Agreement,80,Certificate of Origin Form AI
+0901.21,AIFTA,ASEAN-India Free Trade Agreement,80,Certificate of Origin Form AI
+1006.30,AIFTA,ASEAN-India Free Trade Agreement,60,Certificate of Origin Form AI with TRQ
+1511.10,AIFTA,ASEAN-India Free Trade Agreement,20,Certificate of Origin Form AI
+2204.21,ECTA-AUS,India-Australia Economic Cooperation and Trade Agreement,100,Certificate of Origin Form AIECTA
+2208.30,ECTA-AUS,India-Australia Economic Cooperation and Trade Agreement,100,Certificate of Origin Form AIECTA
+3907.60,AIFTA,ASEAN-India Free Trade Agreement,0,Certificate of Origin Form AI
+3907.60,CEPA-UAE,India-UAE Comprehensive Economic Partnership Agreement,0,Certificate of Origin per CEPA rules
+5208.12,AIFTA,ASEAN-India Free Trade Agreement,5,Certificate of Origin Form AI with yarn-forward rule
+6109.10,AIFTA,ASEAN-India Free Trade Agreement,10,Certificate of Origin Form AI with fabric-forward rule
+6109.10,SAFTA,South Asian Free Trade Area,10,Certificate of Origin under SAFTA
+7207.11,CEPA-KOR,India-Korea Comprehensive Economic Partnership Agreement,0,Certificate of Origin Form KR with 35% value addition
+7601.10,ECTA-AUS,India-Australia Economic Cooperation and Trade Agreement,2.5,Certificate of Origin Form AIECTA
+8471.30,AIFTA,ASEAN-India Free Trade Agreement,0,Certificate of Origin Form AI
+8471.30,CEPA-UAE,India-UAE Comprehensive Economic Partnership Agreement,0,Certificate of Origin per CEPA rules
+8507.60,AIFTA,ASEAN-India Free Trade Agreement,5,Certificate of Origin Form AI
+8517.14,CEPA-UAE,India-UAE Comprehensive Economic Partnership Agreement,15,Certificate of Origin per CEPA rules
+8528.72,AIFTA,ASEAN-India Free Trade Agreement,10,Certificate of Origin Form AI
+8703.23,CEPA-KOR,India-Korea Comprehensive Economic Partnership Agreement,50,Certificate of Origin Form KR with 35% value addition
+8703.23,ECTA-AUS,India-Australia Economic Cooperation and Trade Agreement,50,Certificate of Origin Form AIECTA
+9018.90,CEPA-UAE,India-UAE Comprehensive Economic Partnership Agreement,0,Certificate of Origin per CEPA rules
+7207.11,CEPA-JPN,India-Japan Comprehensive Economic Partnership Agreement,0,Certificate of Origin per CEPA-JPN rules with 35% value addition
+8471.30,CEPA-JPN,India-Japan Comprehensive Economic Partnership Agreement,0,Certificate of Origin per CEPA-JPN rules
+8708.10,CEPA-JPN,India-Japan Comprehensive Economic Partnership Agreement,0,Certificate of Origin per CEPA-JPN rules with 35% value addition
+2917.36,CEPA-JPN,India-Japan Comprehensive Economic Partnership Agreement,0,Certificate of Origin per CEPA-JPN rules
+9018.90,CEPA-JPN,India-Japan Comprehensive Economic Partnership Agreement,0,Certificate of Origin per CEPA-JPN rules
+8471.30,CEPA-UK,India-UK Free Trade Agreement,0,Certificate of Origin per India-UK FTA rules
+8507.60,CEPA-UK,India-UK Free Trade Agreement,10,Certificate of Origin per India-UK FTA rules
+8517.14,CEPA-UK,India-UK Free Trade Agreement,15,Certificate of Origin per India-UK FTA rules
+9018.90,CEPA-UK,India-UK Free Trade Agreement,0,Certificate of Origin per India-UK FTA rules
+3907.60,CEPA-UK,India-UK Free Trade Agreement,0,Certificate of Origin per India-UK FTA rules
+7207.11,CEPA-UK,India-UK Free Trade Agreement,0,Certificate of Origin per India-UK FTA rules with 35% value addition
+8703.23,CEPA-UK,India-UK Free Trade Agreement,50,Certificate of Origin per India-UK FTA rules
+2204.21,CEPA-UK,India-UK Free Trade Agreement,100,Certificate of Origin per India-UK FTA rules
+2208.30,CEPA-UK,India-UK Free Trade Agreement,100,Certificate of Origin per India-UK FTA rules
+0409.00,FTA-NZ,India-New Zealand Free Trade Agreement,40,Certificate of Origin per India-NZ FTA rules
+7601.10,FTA-NZ,India-New Zealand Free Trade Agreement,2.5,Certificate of Origin per India-NZ FTA rules
+7207.11,FTA-NZ,India-New Zealand Free Trade Agreement,2.5,Certificate of Origin per India-NZ FTA rules with 35% value addition
+8471.30,FTA-NZ,India-New Zealand Free Trade Agreement,0,Certificate of Origin per India-NZ FTA rules
+9018.90,FTA-NZ,India-New Zealand Free Trade Agreement,0,Certificate of Origin per India-NZ FTA rules
+8507.60,FTA-NZ,India-New Zealand Free Trade Agreement,10,Certificate of Origin per India-NZ FTA rules
+0409.00,CECPA-MUS,India-Mauritius Comprehensive Economic Cooperation and Partnership Agreement,45,Certificate of Origin per CECPA rules
+3907.60,CECPA-MUS,India-Mauritius Comprehensive Economic Cooperation and Partnership Agreement,0,Certificate of Origin per CECPA rules
+8471.30,CECPA-MUS,India-Mauritius Comprehensive Economic Cooperation and Partnership Agreement,0,Certificate of Origin per CECPA rules
+9018.90,CECPA-MUS,India-Mauritius Comprehensive Economic Cooperation and Partnership Agreement,0,Certificate of Origin per CECPA rules

@@ -1,0 +1,65 @@
+[
+  {
+    "body": "BIS",
+    "name": "Bureau of Indian Standards Certification (ISI Mark / CRS)",
+    "applicable_hs_codes": ["8507.60", "8517.14", "8528.72", "8504.40", "8471.30", "8471.49", "8418.10", "8418.40", "8414.30", "8501.10", "8544.42", "9405.42", "8443.32", "4011.10", "4011.20", "6911.10", "7013.37"],
+    "is_mandatory": true,
+    "pre_shipment_required": false,
+    "risk_if_missing": "Goods detained at customs. Cannot clear without valid BIS registration. BIS registration required before import. Penalty up to INR 5 lakh per consignment.",
+    "process_summary": "Apply for BIS CRS registration via bis.gov.in. Requires test reports from BIS-recognized lab, manufacturing unit details, authorized Indian representative. Processing time: 4-8 weeks. Annual surveillance audits required."
+  },
+  {
+    "body": "FSSAI",
+    "name": "Food Safety and Standards Authority of India License",
+    "applicable_hs_codes": ["0409.00", "0713.10", "0713.20", "0901.11", "0901.21", "0902.10", "0902.30", "1001.99", "1005.90", "1006.30", "1507.10", "1511.10", "1701.99", "2101.11", "2106.90", "2202.10", "2204.21", "2208.30", "2208.40"],
+    "is_mandatory": true,
+    "pre_shipment_required": true,
+    "risk_if_missing": "Import not permitted without FSSAI import license. Goods rejected at port, destroyed or re-exported at importer's cost. Each consignment needs FSSAI NOC.",
+    "process_summary": "Obtain FSSAI Import License via foscos.fssai.gov.in. Submit application with food category details, manufacturing unit certification, lab test reports as per FSSAI standards. Processing time: 2-4 weeks. Each consignment requires separate FSSAI NOC from port health officer."
+  },
+  {
+    "body": "WPC",
+    "name": "Wireless Planning and Coordination Wing Equipment Type Approval",
+    "applicable_hs_codes": ["8517.14", "8517.62", "8471.30"],
+    "is_mandatory": true,
+    "pre_shipment_required": false,
+    "risk_if_missing": "Import of wireless equipment without ETA is prohibited. Goods seized by customs. Criminal proceedings under Indian Telegraph Act possible.",
+    "process_summary": "Apply for Equipment Type Approval (ETA) from WPC wing of DoT. Submit technical specifications, frequency details, test reports from recognized lab. Processing time: 6-12 weeks. Temporary import possible with demo license."
+  },
+  {
+    "body": "CDSCO",
+    "name": "Central Drugs Standard Control Organisation Import License",
+    "applicable_hs_codes": ["3004.90", "3006.60", "9018.90", "9021.10"],
+    "is_mandatory": true,
+    "pre_shipment_required": true,
+    "risk_if_missing": "Import of drugs and medical devices without CDSCO license is a criminal offence under Drugs and Cosmetics Act. Goods confiscated and destroyed.",
+    "process_summary": "Apply for import license from CDSCO via cdscoonline.gov.in. Requires registration of foreign manufacturer, product registration, GMP certificate, free sale certificate from country of origin. Processing time: 3-6 months for new registrations."
+  },
+  {
+    "body": "PQ",
+    "name": "Plant Quarantine Clearance (Phytosanitary)",
+    "applicable_hs_codes": ["0713.10", "0713.20", "1001.99", "1005.90", "1006.30"],
+    "is_mandatory": true,
+    "pre_shipment_required": true,
+    "risk_if_missing": "Consignment fumigated, quarantined, or rejected. Additional inspection charges. Potential destruction of goods if pest infestation detected.",
+    "process_summary": "Import requires phytosanitary certificate from exporting country's plant protection authority. Apply for Plant Quarantine clearance at port of entry. NPPO inspection mandatory. Additional fumigation may be required at Indian port."
+  },
+  {
+    "body": "BEE",
+    "name": "Bureau of Energy Efficiency Star Label",
+    "applicable_hs_codes": ["8418.10", "8418.40", "8414.30"],
+    "is_mandatory": true,
+    "pre_shipment_required": false,
+    "risk_if_missing": "Cannot sell in Indian market without BEE star label. Product may be allowed to enter but cannot be sold to consumers.",
+    "process_summary": "Register product with BEE via beeindia.gov.in. Submit test reports from BIS/NABL accredited lab. Star rating assigned based on energy efficiency parameters. Registration valid for 1-2 years."
+  },
+  {
+    "body": "PESO",
+    "name": "Petroleum and Explosives Safety Organisation License",
+    "applicable_hs_codes": ["2709.00", "2710.12", "2711.11"],
+    "is_mandatory": true,
+    "pre_shipment_required": true,
+    "risk_if_missing": "Import, storage and transport of petroleum products without PESO license is a criminal offence. Heavy fines and imprisonment.",
+    "process_summary": "Obtain PESO license for import, storage and handling. Submit storage facility details, safety measures, fire NOC. License required before import. Processing time: 4-8 weeks."
+  }
+]
