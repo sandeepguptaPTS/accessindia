@@ -7,11 +7,20 @@ function easeOutExpo(t: number): number {
 }
 
 export function useCountUp(end: number, duration = 2000) {
-  const [count, setCount] = useState(0);
+  // FINDING-001: Initialize with end value as SSR fallback, then reset to 0 for animation
+  const [count, setCount] = useState(end);
   const [started, setStarted] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
+  // On hydration, reset to 0 so animation can play from 0 → end
   useEffect(() => {
+    setHydrated(true);
+    setCount(0);
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) return;
     const element = ref.current;
     if (!element) return;
 
@@ -26,7 +35,7 @@ export function useCountUp(end: number, duration = 2000) {
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [started]);
+  }, [started, hydrated]);
 
   useEffect(() => {
     if (!started) return;

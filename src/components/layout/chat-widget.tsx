@@ -153,20 +153,11 @@ export function ChatWidget() {
     <div className="fixed bottom-6 right-6 z-50 print:hidden">
       {/* Chat panel */}
       {open && (
-        <div className="mb-3 w-[360px] max-h-[520px] bg-white rounded-xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
+        <div className="mb-3 w-[360px] max-h-[520px] bg-white rounded-xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
           {/* Header */}
-          <div className="bg-[var(--navy)] text-white px-4 py-3 flex items-center justify-between">
-            <div>
-              <p className="text-sm font-semibold">AccessIndia.ai</p>
-              <p className="text-xs text-white/60">Import compliance assistant</p>
-            </div>
-            <button
-              onClick={() => setOpen(false)}
-              className="text-white/60 hover:text-white transition-colors"
-              aria-label="Close chat"
-            >
-              <X className="w-5 h-5" />
-            </button>
+          <div className="bg-[var(--navy)] text-white px-4 py-3">
+            <p className="text-sm font-semibold">AccessIndia.ai</p>
+            <p className="text-xs text-white/60">Import compliance assistant</p>
           </div>
 
           {/* Body */}

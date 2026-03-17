@@ -22,9 +22,9 @@ src/
     layout.tsx                  # Root layout (header/footer/chat widget)
     search/page.tsx             # Compliance Search (Beta) — 3-step wizard
     about/page.tsx              # About Us (team, Omega QMS, ARM partnership)
-    services/page.tsx           # 5 service practices
-    vision/page.tsx             # Vision statement + 7 values + messages
-    contact/page.tsx            # Contact form + sidebar info + Google Maps
+    services/page.tsx           # 2 featured service cards + 3 accordion practices
+    vision/page.tsx             # Vision statement + 7 numbered values (manifesto style) + messages
+    contact/page.tsx            # Contact form + sidebar info + Google Maps link
     import-navigator/page.tsx   # Redirects to /search
     report/[id]/page.tsx        # Shareable report (SSR from SQLite)
     api/
@@ -47,7 +47,7 @@ src/
       schema.ts                 # Table creation (10 tables)
       seed.ts                   # CSV/JSON → SQLite seeding
     hooks/
-      use-count-up.ts           # Animated counter hook (IntersectionObserver + RAF)
+      use-count-up.ts           # Animated counter hook (IntersectionObserver + RAF, SSR fallback)
     rag/
       context-builder.ts        # Assembles compliance context from DB
       structured-lookup.ts      # Direct DB queries (duties, FTAs, certs, DGFT)
@@ -68,8 +68,8 @@ scripts/
 |-------|------|-------------|
 | `/` | Static (server) | Homepage — hero, trust bar, services overview, numbers, clients, backed-by, search CTA |
 | `/about` | Static (server) | Company info, team bios, Omega QMS foundation, ARM legal partnership |
-| `/services` | Static (server) | 5 service practices with capabilities and "Get a Quote" CTAs |
-| `/vision` | Static (server) | Vision statement, 7 values, messages to stakeholders |
+| `/services` | Static (server) | 2 featured cards + 3 accordion practices with "Get a Quote" CTAs |
+| `/vision` | Static (server) | Vision statement, 7 numbered values (manifesto style), messages |
 | `/contact` | Client | Contact form with service pre-fill via `?service=` param |
 | `/search` | Client | Compliance Search (Beta) — 3-step wizard, accepts `?q=` pre-fill |
 | `/report/[id]` | Dynamic (server) | Shareable compliance report from SQLite |
@@ -83,9 +83,13 @@ scripts/
 - **Database auto-initializes** on first API call — schema creation + CSV/JSON seeding
 - **Reports are persisted** in `generated_reports` table with UUID
 - **Contact form** stores in `contact_leads` table, rate-limited (5/hr/IP), honeypot for bots
-- **Chat widget** (bottom-right) provides conversational compliance flow using existing `/api/import-report`
+- **Chat widget** (bottom-right) provides conversational compliance flow using existing `/api/import-report`, animated open
 - **Static pages are server components** (zero client JS) except homepage numbers section
 - **USD→INR conversion** uses hardcoded rate of 83.5 in `duty-calculator.ts`
+- **Focus states:** Global `focus-visible` ring using gold accent (`globals.css`) — WCAG 2.4.7 compliant
+- **Counter SSR fallback:** Numbers section renders final values server-side; animates from 0 after hydration
+- **Touch targets:** Footer links and contact links padded to 44px+ effective height
+- **Homepage "Why Us":** Asymmetric 2+1 layout (large navy card + 2 border-left text blocks), not 3-column grid
 
 ## Commands
 

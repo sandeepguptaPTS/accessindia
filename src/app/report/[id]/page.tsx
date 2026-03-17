@@ -57,10 +57,18 @@ export default async function ReportPage({ params }: ReportPageProps) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <p className="text-sm text-gray-500">
+    <div>
+      {/* Breadcrumb hero */}
+      <section className="bg-[var(--navy)] py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="flex items-center gap-2 text-sm text-white/50" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[var(--gold)] transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/search" className="hover:text-[var(--gold)] transition-colors">Compliance Search</Link>
+            <span>/</span>
+            <span className="text-white/80">Report</span>
+          </nav>
+          <p className="mt-2 text-xs text-white/40">
             Generated {new Date(report.generatedAt).toLocaleString("en-US", {
               year: "numeric",
               month: "long",
@@ -70,14 +78,25 @@ export default async function ReportPage({ params }: ReportPageProps) {
             })}
           </p>
         </div>
-        <Link
-          href="/search"
-          className="text-sm text-[var(--navy)] hover:text-[var(--deep-blue)] font-medium"
-        >
-          Generate New Report
-        </Link>
+      </section>
+
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="flex items-center justify-between mb-6">
+          <Link
+            href="/search"
+            className="inline-flex items-center gap-1 text-sm text-[var(--navy)] hover:text-[var(--deep-blue)] font-medium"
+          >
+            &larr; Back to Search
+          </Link>
+          <Link
+            href="/search"
+            className="text-sm text-gray-500 hover:text-[var(--navy)] font-medium"
+          >
+            Generate New Report
+          </Link>
+        </div>
+        <ComplianceReportView report={report} />
       </div>
-      <ComplianceReportView report={report} />
     </div>
   );
 }

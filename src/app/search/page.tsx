@@ -97,21 +97,26 @@ function SearchContent() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <h1 className="text-3xl font-bold text-[var(--navy)]">
-            Compliance Search
-          </h1>
-          <Badge className="bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold)]">
-            Beta
-          </Badge>
+    <div>
+      {/* Hero */}
+      <section className="bg-[var(--navy)] py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-2">
+            <h1 className="font-serif text-3xl md:text-4xl text-white">
+              Compliance Search
+            </h1>
+            <Badge className="bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold)]">
+              Beta
+            </Badge>
+          </div>
+          <p className="text-white/70">
+            264 regulatory checks across 19 government sources. Enter your product
+            details to get a comprehensive Indian import compliance report.
+          </p>
         </div>
-        <p className="text-gray-600">
-          264 regulatory checks across 19 government sources. Enter your product
-          details to get a comprehensive Indian import compliance report.
-        </p>
-      </div>
+      </section>
+
+      <div className="max-w-4xl mx-auto px-4 py-8">
 
       <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg text-xs text-amber-700">
         Beta version. Data is indicative. Verify with official sources before
@@ -180,6 +185,7 @@ function SearchContent() {
           <ComplianceReportView report={report} />
         </div>
       )}
+      </div>
     </div>
   );
 }

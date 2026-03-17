@@ -24,7 +24,7 @@ const SERVICES = [
 
 export function WhatWeDoSection() {
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-16 md:py-20 bg-[var(--light-bg)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="font-serif text-3xl md:text-4xl text-[var(--navy)]">
@@ -47,7 +47,7 @@ export function WhatWeDoSection() {
                   <Icon className="w-5 h-5 text-[var(--gold)]" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-[var(--navy)]">{service.title}</h3>
+                  <h3 className="font-semibold text-xl text-[var(--navy)]">{service.title}</h3>
                   <p className="mt-2 text-sm text-gray-600 leading-relaxed">{service.description}</p>
                 </div>
               </div>

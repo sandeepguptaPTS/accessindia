@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Landmark, ShieldCheck, Scale, FileText, Receipt } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
   title: "Services — Access India AI Private Limited",
@@ -86,7 +92,56 @@ const SERVICES = [
   },
 ];
 
+function ServiceBody({ service }: { service: typeof SERVICES[number] }) {
+  return (
+    <>
+      <p className="text-gray-600 mb-4">{service.description}</p>
+      <ul className="space-y-2">
+        {service.capabilities.map((cap) => (
+          <li key={cap} className="flex items-start gap-2 text-sm text-gray-600">
+            <span className="text-[var(--gold)] mt-0.5">&#10003;</span>
+            {cap}
+          </li>
+        ))}
+      </ul>
+      <div className="mt-6">
+        <Link
+          href={`/contact?service=${service.slug}`}
+          className="inline-flex items-center px-5 py-2.5 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[#c49a3a] transition-colors text-sm"
+        >
+          Get a Quote
+        </Link>
+      </div>
+    </>
+  );
+}
+
+function ServiceCard({ service }: { service: typeof SERVICES[number] }) {
+  const Icon = service.icon;
+  return (
+    <Card className="border-gray-200">
+      <CardHeader>
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-[var(--navy)] rounded-lg flex items-center justify-center shrink-0">
+            <Icon className="w-6 h-6 text-[var(--gold)]" />
+          </div>
+          <CardTitle className="text-xl text-[var(--navy)]">
+            {service.title}
+          </CardTitle>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <ServiceBody service={service} />
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function ServicesPage() {
+  // First 2 services are featured (always visible), rest in accordion
+  const featured = SERVICES.slice(0, 2);
+  const remaining = SERVICES.slice(2);
+
   return (
     <div>
       {/* Hero */}
@@ -100,45 +155,45 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Featured Services */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          {SERVICES.map((service) => {
-            const Icon = service.icon;
-            return (
-              <Card key={service.slug} className="border-gray-200">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[var(--navy)] rounded-lg flex items-center justify-center shrink-0">
-                      <Icon className="w-6 h-6 text-[var(--gold)]" />
-                    </div>
-                    <CardTitle className="text-xl text-[var(--navy)]">
-                      {service.title}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.capabilities.map((cap) => (
-                      <li key={cap} className="flex items-start gap-2 text-sm text-gray-600">
-                        <span className="text-[var(--gold)] mt-0.5">&#10003;</span>
-                        {cap}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-6">
-                    <Link
-                      href={`/contact?service=${service.slug}`}
-                      className="inline-flex items-center px-5 py-2.5 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[#c49a3a] transition-colors text-sm"
-                    >
-                      Get a Quote
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {featured.map((service) => (
+            <ServiceCard key={service.slug} service={service} />
+          ))}
+
+          {/* Remaining Services — collapsible */}
+          <div>
+            <h2 className="font-serif text-2xl text-[var(--navy)] mb-4">
+              More Practices
+            </h2>
+            <Accordion type="multiple" className="space-y-3">
+              {remaining.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <AccordionItem
+                    key={service.slug}
+                    value={service.slug}
+                    className="border border-gray-200 rounded-lg px-6 data-[state=open]:border-[var(--gold)]/50"
+                  >
+                    <AccordionTrigger className="hover:no-underline py-5 hover:bg-[var(--light-bg)] -mx-6 px-6 rounded-lg transition-colors [&>svg]:text-[var(--gold)] [&>svg]:size-5">
+                      <div className="flex items-center gap-4 text-left">
+                        <div className="w-10 h-10 bg-[var(--navy)] rounded-lg flex items-center justify-center shrink-0">
+                          <Icon className="w-5 h-5 text-[var(--gold)]" />
+                        </div>
+                        <span className="text-lg font-semibold text-[var(--navy)]">
+                          {service.title}
+                        </span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-6">
+                      <ServiceBody service={service} />
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
+            </Accordion>
+          </div>
         </div>
       </section>
 

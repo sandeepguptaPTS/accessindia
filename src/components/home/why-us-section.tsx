@@ -1,49 +1,52 @@
-import { Users, ShieldCheck, Layers } from "lucide-react";
-
-const PILLARS = [
-  {
-    icon: Users,
-    title: "We Come from the System",
-    description:
-      "Our founders and advisors are former customs officers, trade policy makers, and regulatory insiders. We don't just understand compliance — we helped build the frameworks.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "100% Compliance, No Shortcuts",
-    description:
-      "We never cut corners. Every recommendation we make is backed by current law, official notifications, and deep regulatory knowledge. Your compliance is our reputation.",
-  },
-  {
-    icon: Layers,
-    title: "End-to-End, Not Piecemeal",
-    description:
-      "From HS classification to customs clearance, from BIS certification to GST litigation — we handle the entire compliance chain so you don't have to coordinate between five different consultants.",
-  },
-];
-
 export function WhyUsSection() {
   return (
-    <section className="py-16 md:py-20 bg-[var(--light-bg)]">
+    <section className="py-16 md:py-24 bg-[var(--light-bg)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl text-[var(--navy)]">
-            Why Us
-          </h2>
-        </div>
+        <h2 className="font-serif text-3xl md:text-4xl text-[var(--navy)] mb-10">
+          Why Us
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {PILLARS.map((pillar) => {
-            const Icon = pillar.icon;
-            return (
-              <div key={pillar.title} className="text-center">
-                <div className="w-14 h-14 bg-[var(--gold)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon className="w-7 h-7 text-[var(--gold)]" />
-                </div>
-                <h3 className="font-semibold text-lg text-[var(--navy)] mb-3">{pillar.title}</h3>
-                <p className="text-sm text-gray-600">{pillar.description}</p>
-              </div>
-            );
-          })}
+        {/* Asymmetric 2+1 layout — lead pillar is large, two supporting */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Lead pillar — spans 3 columns */}
+          <div className="lg:col-span-3 bg-[var(--navy)] rounded-2xl p-8 md:p-10">
+            <p className="text-[var(--gold)] text-sm font-semibold uppercase tracking-wider mb-3">
+              Our Origin
+            </p>
+            <h3 className="font-serif text-2xl md:text-3xl text-white mb-4">
+              We Come from the System
+            </h3>
+            <p className="text-white/70 leading-relaxed">
+              Our founders and advisors are former customs officers, trade policy makers,
+              and regulatory insiders. We don&apos;t just understand compliance — we helped
+              build the frameworks. That means faster resolution, fewer surprises,
+              and advice grounded in how the system actually works.
+            </p>
+          </div>
+
+          {/* Two supporting pillars stacked */}
+          <div className="lg:col-span-2 flex flex-col gap-8">
+            <div className="border-l-4 border-[var(--gold)] pl-6">
+              <h3 className="font-semibold text-xl text-[var(--navy)] mb-2">
+                100% Compliance, No Shortcuts
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Every recommendation we make is backed by current law, official
+                notifications, and deep regulatory knowledge. Your compliance is our reputation.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-[var(--gold)] pl-6">
+              <h3 className="font-semibold text-xl text-[var(--navy)] mb-2">
+                End-to-End, Not Piecemeal
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                From HS classification to customs clearance, from BIS certification to GST
+                litigation — we handle the entire compliance chain so you don&apos;t coordinate
+                between five different consultants.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
