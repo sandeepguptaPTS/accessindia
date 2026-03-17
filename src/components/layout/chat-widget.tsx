@@ -437,7 +437,7 @@ export function ChatWidget() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-14 h-14 bg-[var(--gold)] text-[var(--navy)] rounded-full shadow-lg hover:bg-[#c49a3a] transition-all flex items-center justify-center hover:scale-105"
+        className="w-14 h-14 bg-[var(--gold)] text-[var(--navy)] rounded-full shadow-lg hover:bg-[#c49a3a] transition-all flex items-center justify-center hover:scale-105 cursor-pointer"
         aria-label={open ? "Close chat" : "Open chat"}
       >
         {open ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
