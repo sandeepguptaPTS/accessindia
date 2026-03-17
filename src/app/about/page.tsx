@@ -234,7 +234,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="px-8 py-3.5 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[#c49a3a] transition-colors"
+              className="px-8 py-3.5 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[var(--gold-hover)] transition-colors"
             >
               Schedule a Consultation
             </Link>

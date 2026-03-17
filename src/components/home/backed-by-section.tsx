@@ -33,7 +33,7 @@ export function BackedBySection() {
               </p>
               <Link
                 href="/about"
-                className="text-sm font-medium text-[var(--gold)] hover:text-[#c49a3a] transition-colors"
+                className="text-sm font-medium text-[var(--gold)] hover:text-[var(--gold-hover)] transition-colors"
               >
                 Learn more about our foundation &rarr;
               </Link>
@@ -58,7 +58,7 @@ export function BackedBySection() {
                 href="https://lawchambersofarm.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-[var(--gold)] hover:text-[#c49a3a] transition-colors"
+                className="text-sm font-medium text-[var(--gold)] hover:text-[var(--gold-hover)] transition-colors"
               >
                 Visit lawchambersofarm.com &rarr;
               </a>

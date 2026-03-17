@@ -16,7 +16,7 @@ import type {
   DBProcessStep,
 } from "@/types/database";
 
-const FTA_MEMBER_COUNTRIES: Record<string, string[]> = {
+export const FTA_MEMBER_COUNTRIES: Record<string, string[]> = {
   AIFTA: ["brunei", "cambodia", "indonesia", "laos", "malaysia", "myanmar", "philippines", "singapore", "thailand", "vietnam"],
   "CEPA-UAE": ["united arab emirates", "uae"],
   "ECTA-AUS": ["australia"],
@@ -27,6 +27,24 @@ const FTA_MEMBER_COUNTRIES: Record<string, string[]> = {
   "FTA-NZ": ["new zealand", "nz"],
   "CECPA-MUS": ["mauritius"],
 };
+
+export function matchCountryToFTAs(originCountry: string): string[] {
+  const country = originCountry.toLowerCase();
+  return Object.entries(FTA_MEMBER_COUNTRIES)
+    .filter(([, members]) =>
+      members.some((m) => m === country || country.includes(m))
+    )
+    .map(([code]) => code);
+}
+
+export function isHSCodeApplicable(applicableCodesJson: string, hsCode: string): boolean {
+  try {
+    const applicableCodes: string[] = JSON.parse(applicableCodesJson);
+    return applicableCodes.includes(hsCode);
+  } catch {
+    return false;
+  }
+}
 
 export function lookupDutyRates(hsCode: string): DBDutyRate | null {
   const db = getDB();
@@ -100,14 +118,7 @@ export function lookupCertifications(
     .all() as DBCertification[];
 
   return allCerts
-    .filter((cert) => {
-      try {
-        const applicableCodes: string[] = JSON.parse(cert.applicable_hs_codes);
-        return applicableCodes.includes(hsCode);
-      } catch {
-        return false;
-      }
-    })
+    .filter((cert) => isHSCodeApplicable(cert.applicable_hs_codes, hsCode))
     .map((cert) => ({
       body: cert.body,
       name: cert.name,

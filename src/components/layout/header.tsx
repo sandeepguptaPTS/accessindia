@@ -55,7 +55,7 @@ export function Header() {
             })}
             <Link
               href="/contact"
-              className="ml-2 px-4 py-2 bg-[var(--gold)] text-[var(--navy)] text-sm font-semibold rounded-lg hover:bg-[#c49a3a] transition-colors"
+              className="ml-2 px-4 py-2 bg-[var(--gold)] text-[var(--navy)] text-sm font-semibold rounded-lg hover:bg-[var(--gold-hover)] transition-colors"
             >
               Get a Quote
             </Link>
@@ -102,7 +102,7 @@ export function Header() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="block text-center px-4 py-2.5 bg-[var(--gold)] text-[var(--navy)] text-sm font-semibold rounded-lg hover:bg-[#c49a3a] transition-colors"
+                className="block text-center px-4 py-2.5 bg-[var(--gold)] text-[var(--navy)] text-sm font-semibold rounded-lg hover:bg-[var(--gold-hover)] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get a Quote

@@ -39,19 +39,20 @@ src/
   lib/
     ai/
       classify-hs.ts            # 2-stage: vector search → Gemini selection
-      import-report.ts          # Gemini report synthesis (risk summary + regulatory notes)
+      import-report.ts          # Gemini report synthesis + deterministic warnings + LLM response parsing
       embeddings.ts             # Gemini embedding API wrapper
-      gemini.ts                 # Gemini client init
+      gemini.ts                 # Gemini client with exponential backoff retry (max 3 attempts)
     db/
       client.ts                 # SQLite connection (singleton)
-      schema.ts                 # Table creation (10 tables)
+      schema.ts                 # Table creation (10 tables) + indexes on hs_code columns
       seed.ts                   # CSV/JSON → SQLite seeding
     hooks/
       use-count-up.ts           # Animated counter hook (IntersectionObserver + RAF, SSR fallback)
     rag/
       context-builder.ts        # Assembles compliance context from DB
-      structured-lookup.ts      # Direct DB queries (duties, FTAs, certs, DGFT)
-      vector-search.ts          # Cosine similarity over HS code embeddings
+      structured-lookup.ts      # Direct DB queries (duties, FTAs, certs, DGFT) + FTA country matching
+      vector-search.ts          # Cosine similarity over HS code embeddings (zero-vector guarded)
+    constants.ts                # Shared constants (COUNTRIES list used by chat widget + product form)
     duty-calculator.ts          # Deterministic duty math (BCD + AIDC + SWS + IGST)
   types/
     compliance-report.ts        # ComplianceReport interface
@@ -77,9 +78,11 @@ scripts/
 
 ## Key Patterns
 
-- **Brand colors:** Navy `#0D1B3E`, Deep Blue `#1A3A6B`, Gold `#D4A843`, Light BG `#F4F6FA`
+- **Brand colors:** Navy `#0D1B3E`, Deep Blue `#1A3A6B`, Gold `#D4A843`, Gold Hover `#c49a3a`, Light BG `#F4F6FA`
 - **Duty calculation is deterministic** (`duty-calculator.ts`), not LLM-generated
 - **HS classification is 2-stage:** vector similarity → Gemini selection. Confidence < 70% → user picks
+- **Gemini API calls have retry logic** — exponential backoff (1s, 2s, 4s cap), max 3 attempts in `gemini.ts`
+- **Skip-to-content link** — visually hidden, appears on keyboard focus (WCAG 2.4.1), targets `#main-content`
 - **Database auto-initializes** on first API call — schema creation + CSV/JSON seeding
 - **Reports are persisted** in `generated_reports` table with UUID
 - **Contact form** stores in `contact_leads` table, rate-limited (5/hr/IP), honeypot for bots
@@ -96,6 +99,8 @@ scripts/
 ```bash
 npm run dev              # Start dev server
 npm run build            # Production build
+npm test                 # Run all tests (vitest)
+npm run test:watch       # Run tests in watch mode
 npx tsx scripts/generate-embeddings.ts   # Generate HS code embeddings (requires GEMINI_API_KEY)
 vercel --prod            # Deploy to Vercel
 ```
@@ -120,6 +125,7 @@ To add more HS codes or duty rates:
 - **Compliance Search (Beta)** — fully functional
 - **Floating chat widget** — conversational compliance assistant on all pages
 - **Contact form** — stores leads in SQLite
+- **Test suite** — 88 tests across 8 files (vitest): duty calculator, vector search, FTA matching, deterministic warnings, LLM response parsing, API route validation, rate limiting, full pipeline integration
 - Data coverage: ~41 sample HS codes across food, beverages, oils, electronics, equipment
 - Official data sources: CBIC, DGFT, BIS, FSSAI
 
@@ -129,7 +135,7 @@ To add more HS codes or duty rates:
 - Components use shadcn/ui primitives from `@/components/ui/`
 - API routes return JSON with `status: "complete" | "needs_classification" | "error" | "success"`
 - Client state managed with React hooks (no external state library)
-- Navy/Gold brand palette (CSS variables: `--navy`, `--deep-blue`, `--gold`, `--light-bg`)
+- Navy/Gold brand palette (CSS variables: `--navy`, `--deep-blue`, `--gold`, `--gold-hover`, `--light-bg`)
 - Serif font (Georgia) for headings, Inter for body text
 
 ## gstack

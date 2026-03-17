@@ -67,23 +67,31 @@ Do not repeat exact duty percentages or amounts (shown separately in the report)
     temperature: 0.2,
   });
 
-  // Parse the response into sections
-  const riskMatch = response.match(
-    /## RISK SUMMARY\s*([\s\S]*?)(?=## REGULATORY NOTES|$)/i
-  );
-  const notesMatch = response.match(/## REGULATORY NOTES\s*([\s\S]*?)$/i);
+  const { riskSummary: parsedRisk, regulatoryNotes } = parseReportSections(response);
 
   // Build risk summary: deterministic warnings first, then LLM summary
   const riskParts: string[] = [];
   if (deterministicWarnings.length > 0) {
     riskParts.push(deterministicWarnings.join("\n"));
   }
-  if (riskMatch?.[1]?.trim()) {
-    riskParts.push(riskMatch[1].trim());
+  if (parsedRisk) {
+    riskParts.push(parsedRisk);
   }
   riskParts.push(DISCLAIMER);
 
-  // Post-process regulatory notes: strip orphan fallback text
+  return {
+    riskSummary: riskParts.join("\n\n") || "Risk assessment pending.",
+    regulatoryNotes,
+  };
+}
+
+export function parseReportSections(response: string): { riskSummary: string; regulatoryNotes: string } {
+  const riskMatch = response.match(
+    /## RISK SUMMARY\s*([\s\S]*?)(?=## REGULATORY NOTES|$)/i
+  );
+  const notesMatch = response.match(/## REGULATORY NOTES\s*([\s\S]*?)$/i);
+
+  const riskSummary = riskMatch?.[1]?.trim() || "";
   let regulatoryNotes = notesMatch?.[1]?.trim() || "Detailed regulatory notes pending.";
   regulatoryNotes = regulatoryNotes
     .split("\n")
@@ -92,12 +100,12 @@ Do not repeat exact duty percentages or amounts (shown separately in the report)
     .trim();
 
   return {
-    riskSummary: riskParts.join("\n\n") || "Risk assessment pending.",
+    riskSummary,
     regulatoryNotes: regulatoryNotes || "Detailed regulatory notes pending.",
   };
 }
 
-function generateDeterministicWarnings(
+export function generateDeterministicWarnings(
   certifications: CertificationRequirement[],
   antiDumpingDuties: AntiDumpingDuty[],
   dgftLicensing: DGFTLicensing | null,
