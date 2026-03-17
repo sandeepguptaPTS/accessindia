@@ -1,7 +1,7 @@
 # Import Compliance Navigator — Status Summary
 
 **Tool:** Import Compliance Navigator (Tool 1 of AccessIndia.ai)
-**Live URL:** https://accessindia.vercel.app/import-navigator
+**Live URL:** https://accessindia.vercel.app/search (redirects from `/import-navigator`)
 
 ---
 
