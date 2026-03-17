@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="relative bg-[var(--navy)] overflow-hidden">
+    <section className="relative bg-[var(--navy)] overflow-hidden flex-1 flex flex-col">
       {/* CSS dot pattern */}
       <div
         className="absolute inset-0 opacity-[0.07]"
@@ -12,8 +12,8 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 md:pt-16 md:pb-14 lg:pt-20 lg:pb-16 flex items-center flex-1">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
           {/* Left — text */}
           <div>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight">

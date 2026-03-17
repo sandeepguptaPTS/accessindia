@@ -93,6 +93,8 @@ scripts/
 - **Counter SSR fallback:** Numbers section renders final values server-side; animates from 0 after hydration
 - **Touch targets:** Footer links and contact links padded to 44px+ effective height
 - **Homepage "Why Us":** Asymmetric 2+1 layout (large navy card + 2 border-left text blocks), not 3-column grid
+- **Header:** Light frosted glass (`bg-white/80 backdrop-blur-xl`), sticky, dark navy text — readable on all backgrounds
+- **Homepage hero + trust bar:** Wrapped in `min-h-[calc(100dvh-4rem)]` flex container to fit within first viewport
 
 ## Commands
 

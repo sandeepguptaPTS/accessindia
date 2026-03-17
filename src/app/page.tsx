@@ -11,8 +11,10 @@ import { CtaBanner } from "@/components/home/cta-banner";
 export default function Home() {
   return (
     <div>
-      <HeroSection />
-      <TrustBar />
+      <div className="min-h-[calc(100dvh-4rem)] flex flex-col">
+        <HeroSection />
+        <TrustBar />
+      </div>
       <WhatWeDoSection />
       <WhyUsSection />
       <NumbersSection />
