@@ -19,13 +19,13 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-[var(--navy)] sticky top-0 z-50">
+    <header className="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-white">
+            <span className="text-xl font-bold text-[var(--navy)]">
               Access<span className="text-[var(--gold)]">India</span>
-              <span className="text-white/50 text-sm">.ai</span>
+              <span className="text-[var(--navy)]/40 text-sm">.ai</span>
             </span>
           </Link>
 
@@ -39,8 +39,8 @@ export function Header() {
                   href={link.href}
                   className={`text-sm font-medium transition-colors flex items-center gap-1.5 py-2 border-b-2 ${
                     isActive
-                      ? "text-[var(--gold)] border-[var(--gold)]"
-                      : "text-white/80 border-transparent hover:text-[var(--gold)]"
+                      ? "text-[var(--navy)] border-[var(--gold)]"
+                      : "text-[var(--navy)]/70 border-transparent hover:text-[var(--navy)]"
                   }`}
                 >
                   {link.href === "/search" && <Search className="w-3.5 h-3.5" />}
@@ -55,7 +55,7 @@ export function Header() {
             })}
             <Link
               href="/contact"
-              className="ml-2 px-4 py-2 bg-[var(--gold)] text-[var(--navy)] text-sm font-semibold rounded-lg hover:bg-[var(--gold-hover)] transition-colors"
+              className="ml-2 px-4 py-2 bg-[var(--navy)] text-white text-sm font-semibold rounded-lg hover:bg-[var(--navy)]/90 transition-colors"
             >
               Get a Quote
             </Link>
@@ -63,7 +63,7 @@ export function Header() {
 
           {/* Mobile hamburger button */}
           <button
-            className="lg:hidden p-2 text-white/80 hover:text-[var(--gold)] transition-colors"
+            className="lg:hidden p-2 text-[var(--navy)]/70 hover:text-[var(--navy)] transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -74,7 +74,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <nav className="lg:hidden bg-[var(--navy)] border-t border-white/10">
+        <nav className="lg:hidden bg-white/90 backdrop-blur-xl border-t border-gray-200/50">
           <div className="px-4 py-3 space-y-1">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
@@ -84,8 +84,8 @@ export function Header() {
                   href={link.href}
                   className={`flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors ${
                     isActive
-                      ? "text-[var(--gold)] bg-white/10"
-                      : "text-white/80 hover:text-[var(--gold)] hover:bg-white/5"
+                      ? "text-[var(--navy)] bg-[var(--navy)]/10"
+                      : "text-[var(--navy)]/70 hover:text-[var(--navy)] hover:bg-[var(--navy)]/5"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -102,7 +102,7 @@ export function Header() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="block text-center px-4 py-2.5 bg-[var(--gold)] text-[var(--navy)] text-sm font-semibold rounded-lg hover:bg-[var(--gold-hover)] transition-colors"
+                className="block text-center px-4 py-2.5 bg-[var(--navy)] text-white text-sm font-semibold rounded-lg hover:bg-[var(--navy)]/90 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get a Quote
