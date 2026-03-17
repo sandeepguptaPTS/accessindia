@@ -18,20 +18,6 @@ export function ComplianceReportView({ report }: ComplianceReportProps) {
         Beta version. Data is indicative. Verify with official sources before making import decisions.
       </div>
 
-      {/* Risk Banner */}
-      <Card className="border-red-200 bg-red-50">
-        <CardHeader className="pb-2">
-          <CardTitle className="text-lg text-red-800 flex items-center gap-2">
-            <span className="text-xl">&#9888;</span> Risk Summary
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="prose prose-sm max-w-none text-red-700 prose-strong:text-red-800 prose-li:text-red-700">
-            <ReactMarkdown>{report.riskSummary}</ReactMarkdown>
-          </div>
-        </CardContent>
-      </Card>
-
       {/* HS Classification */}
       <Card>
         <CardHeader>
@@ -351,6 +337,20 @@ export function ComplianceReportView({ report }: ComplianceReportProps) {
         </CardContent>
       </Card>
 
+      {/* Risk Summary */}
+      <Card className="border-red-200 bg-red-50">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-lg text-red-800 flex items-center gap-2">
+            <span className="text-xl">&#9888;</span> Risk Summary
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="prose prose-sm max-w-none text-red-700 prose-strong:text-red-800 prose-li:text-red-700">
+            <ReactMarkdown>{report.riskSummary}</ReactMarkdown>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Citations */}
       {report.citations.length > 0 && (
         <Card className="bg-gray-50">
@@ -380,8 +380,9 @@ export function ComplianceReportView({ report }: ComplianceReportProps) {
               Need Professional Assistance?
             </h3>
             <p className="text-sm text-white/70 mt-2">
-              Our expert team can help with customs clearance, certification,
-              and regulatory compliance for your India imports.
+              We offer end-to-end compliance management — IEC registration, GST,
+              certifications, CHA coordination, customs clearance, and ongoing
+              advisory for your India imports.
             </p>
             <div className="mt-4 flex gap-3 justify-center no-print">
               <a

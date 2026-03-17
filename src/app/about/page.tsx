@@ -1,46 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Scale } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us — Access India AI Private Limited",
   description:
-    "India's premier policy, regulatory, and import compliance consulting firm. Founded by former customs officers with 25+ years of regulatory leadership.",
+    "A professional advisory portal for foreign individuals and companies who want to import goods into India or explore business and investment opportunities.",
 };
 
 const TEAM = [
   {
     name: "Tarun Goel",
-    role: "Founder & Managing Director",
+    role: "Founder & Managing Director, Omega QMS Private Limited",
     initials: "TG",
-    bio: "With over 25 years of experience in Indian regulatory systems, Tarun founded Omega QMS in 2000 and has since built one of India's most trusted compliance practices. His deep relationships across CBIC, DGFT, BIS, FSSAI, and other regulatory bodies give clients unparalleled access to India's governance ecosystem.",
+    bio: "Tarun founded Omega QMS in 2000 and has spent over 25 years advising global brands, Indian conglomerates, and industry bodies, including numerous Fortune 500 companies on regulatory compliance, trade policy, and market access in India. He is widely respected for his counsel on technical regulations and Quality Control Orders (QCOs), with direct engagement across key Indian authorities including BIS, DPIIT, MeitY, DGFT, and the Ministry of Commerce & Industry.",
   },
   {
     name: "Nitin Goyal",
-    role: "Chief Operating Officer",
+    role: "COO, Omega QMS Private Limited",
     initials: "NG",
-    bio: "Nitin brings operational excellence to AccessIndia's compliance delivery. With expertise spanning customs procedures, certification management, and trade optimization, he ensures every client engagement is executed with precision.",
-  },
-];
-
-const ARM_LEADERSHIP = [
-  {
-    name: "Adv. Arjun Raghavendra M",
-    role: "Founding Partner",
-    initials: "AR",
-    focus: "Customs law, GST litigation, and international trade law. Deep expertise in trade remedy proceedings, anti-dumping investigations, and customs valuation disputes.",
-  },
-  {
-    name: "Dr. Manjunath A N",
-    role: "Partner",
-    initials: "MA",
-    focus: "Regulatory law, policy advocacy, and government liaison. Academic background in trade law combined with practical regulatory experience.",
-  },
-  {
-    name: "Mr. Dhruva M. Seshadri",
-    role: "Partner",
-    initials: "DS",
-    focus: "Tax litigation, customs appeals, and trade compliance advisory. Strong track record in customs tribunals and appellate forums.",
+    bio: "Nitin brings an entrepreneurial background in steel manufacturing and retail to his role as COO at Omega QMS, one of India\u2019s most trusted names in regulatory compliance and market access for over 25 years. He leads execution across cross-border trade, FDI facilitation, policy advocacy, and technical regulations including QCOs, helping global manufacturers and investors navigate India\u2019s regulatory landscape with clarity and confidence.",
   },
 ];
 
@@ -48,112 +26,92 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-[var(--navy)] py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-[var(--navy)] py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-serif text-4xl md:text-5xl text-white">About Us</h1>
-          <p className="mt-4 text-lg text-white/70 max-w-2xl">
-            India&apos;s premier policy, regulatory, and import compliance consulting firm.
-          </p>
         </div>
       </section>
 
-      {/* Who We Are — narrative with key stats */}
+      {/* Section 1: Who We Are */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl text-[var(--navy)] mb-6">Who We Are</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Access India AI Private Limited is a policy, regulatory, and import
-            compliance consulting firm built on 25+ years of hands-on experience
-            inside India&apos;s regulatory system. Our team includes former customs
-            officers, trade policy professionals, and regulatory specialists who
-            have worked within the very agencies that govern Indian imports.
+          <p className="text-gray-600 text-lg leading-relaxed italic">
+            We are a new platform built by old hands — former customs officers
+            and industry veterans who spent years inside the system you are
+            trying to navigate. We are more concerned about your business&apos;s
+            interests and liabilities than our own profits. If we take longer, it
+            is because we are being thorough. We would rather delay a report than
+            give you a wrong one. 100% compliant results. Every time.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-10">
-            We help businesses — from Fortune 500 multinationals to growing
-            importers — navigate the full spectrum of Indian import compliance:
-            HS classification, customs duties, BIS/FSSAI/WPC certifications,
-            DGFT licensing, FTA utilization, and customs litigation.
-          </p>
+        </div>
+      </section>
 
-          {/* Inline stats */}
-          <div className="grid grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-[var(--light-bg)] rounded-xl">
-              <div className="text-3xl font-bold text-[var(--navy)]">25+</div>
-              <div className="text-sm text-gray-500 mt-1">Years of Regulatory Leadership</div>
-            </div>
-            <div className="text-center p-6 bg-[var(--light-bg)] rounded-xl">
-              <div className="text-3xl font-bold text-[var(--navy)]">10+</div>
-              <div className="text-sm text-gray-500 mt-1">Government Agencies Covered</div>
-            </div>
-            <div className="text-center p-6 bg-[var(--light-bg)] rounded-xl">
-              <div className="text-3xl font-bold text-[var(--navy)]">45+</div>
-              <div className="text-sm text-gray-500 mt-1">Countries Served</div>
-            </div>
+      {/* Section 2: Why We Exist */}
+      <section className="py-16 md:py-20 bg-[var(--light-bg)]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl text-[var(--navy)] mb-6">Why We Exist</h2>
+          <p className="text-gray-600 text-lg leading-relaxed italic">
+            India&apos;s import compliance system is powerful but deeply
+            fragmented. BIS, FSSAI, WPC, CDSCO, DGFT, MoEF, Customs — each with
+            their own notifications, timelines, and processes. A single missed
+            certification can result in shipment detention, demurrage and
+            re-export at the importer&apos;s cost. Most companies discover this
+            after the container arrives. We exist so they discover it before they
+            ship.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 3: Our Clients (was Section 4 in doc) */}
+      <section className="py-12 bg-white border-y border-gray-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl text-[var(--navy)] mb-6 text-center">Our Clients</h2>
+          <div className="flex justify-center items-center gap-12 flex-wrap">
+            {["Bahru Steels", "PUMA", "Motorola"].map((name) => (
+              <span key={name} className="text-lg font-semibold text-[var(--navy)]/50 tracking-wide">
+                {name}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why We Exist — full-width callout */}
-      <section className="py-14 bg-[var(--navy)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="border-l-4 border-[var(--gold)] pl-6 md:pl-8">
-            <h2 className="font-serif text-2xl md:text-3xl text-white mb-4">Why We Exist</h2>
-            <p className="text-white/70 text-lg leading-relaxed">
-              India&apos;s import compliance system is fragmented across 10+
-              government agencies, hundreds of notifications, and constantly
-              changing regulations. Most businesses either overpay duties, miss
-              FTA savings, or face certification delays — simply because no single
-              advisor covers the entire compliance chain.
-            </p>
-            <p className="mt-4 text-[var(--gold)] font-semibold text-lg">
-              One firm, end-to-end, from the first customs notification to the last stamp on your Bill of Entry.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Omega QMS — Origin story */}
+      {/* Section 4: Omega QMS — Our Foundation (was Section 5 in doc) */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="shrink-0">
-              <div className="w-20 h-20 bg-[var(--navy)] rounded-2xl flex items-center justify-center">
-                <span className="text-[var(--gold)] font-bold text-3xl">&#937;</span>
-              </div>
-            </div>
-            <div>
-              <h2 className="font-serif text-3xl text-[var(--navy)] mb-4">
-                Omega QMS — Our Foundation
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-3">
-                Founded in 2000, Omega QMS has been at the forefront of quality
-                management and regulatory compliance for over 25 years. Operating
-                across sectors including electronics, steel, food, pharma, and
-                consumer goods, Omega has built deep institutional knowledge of
-                India&apos;s standards and certification ecosystem.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                AccessIndia is the digital-first evolution of this expertise —
-                combining Omega&apos;s 25 years of regulatory relationships with
-                AI-powered compliance tools to serve a global client base.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl text-[var(--navy)] mb-6">
+            Omega QMS — Our Foundation
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed italic">
+            AccessIndia.ai has been developed under the aegis of Omega QMS
+            Private Limited — a leading Indian consulting firm founded in 2000,
+            specialising in global trade, regulatory compliance, policy advocacy,
+            foreign investment facilitation, and corporate advisory. For 25
+            years, Omega QMS has advised multinational corporations, global
+            manufacturers, investors, and industry bodies across electronics,
+            steel, aluminium, polymers, textiles, electrical appliances,
+            automotive components, tyres, footwear, furniture, bearings, and
+            engineering products. Our work spans Central Government policy
+            interface, product certifications across all Partner Government
+            Agencies, customs and trade optimisation. Client portfolio includes
+            Fortune 500 companies.
+          </p>
         </div>
       </section>
 
       {/* Our Team */}
       <section className="py-16 md:py-20 bg-[var(--light-bg)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl text-[var(--navy)] mb-10">Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {TEAM.map((person) => (
               <div
                 key={person.name}
-                className="bg-white rounded-2xl p-8 border border-gray-100"
+                className="p-8 rounded-2xl bg-white"
               >
-                <div className="w-16 h-16 rounded-full bg-[var(--navy)] flex items-center justify-center mb-5">
-                  <span className="text-[var(--gold)] font-bold text-xl">{person.initials}</span>
+                <div className="w-14 h-14 rounded-full bg-[var(--navy)] flex items-center justify-center mb-5">
+                  <span className="text-[var(--gold)] font-bold text-lg">{person.initials}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-[var(--navy)]">{person.name}</h3>
                 <p className="text-sm text-[var(--gold)] font-medium mt-1 mb-4">{person.role}</p>
@@ -164,70 +122,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ARM Partnership */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-start gap-4 mb-8">
-            <div className="w-12 h-12 bg-[var(--deep-blue)] rounded-lg flex items-center justify-center shrink-0">
-              <Scale className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h2 className="font-serif text-3xl text-[var(--navy)]">
-                ARM Partnership
-              </h2>
-              <p className="text-gray-600 mt-2">
-                Our legal partnership with the{" "}
-                <a
-                  href="https://lawchambersofarm.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--gold)] hover:underline"
-                >
-                  Law Chambers of ARM
-                </a>{" "}
-                brings specialized expertise in customs law, GST litigation, and trade remedies.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ARM_LEADERSHIP.map((person) => (
-              <div key={person.name} className="p-6 rounded-xl bg-[var(--light-bg)]">
-                <div className="w-10 h-10 rounded-full bg-[var(--deep-blue)] flex items-center justify-center mb-4">
-                  <span className="text-white font-bold text-xs">{person.initials}</span>
-                </div>
-                <p className="font-semibold text-[var(--navy)]">{person.name}</p>
-                <p className="text-xs text-[var(--gold)] font-medium mt-0.5 mb-3">{person.role}</p>
-                <p className="text-sm text-gray-600 leading-relaxed">{person.focus}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Clients trust bar */}
-      <section className="py-10 bg-[var(--light-bg)] border-y border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm text-gray-500 mb-5">
-            Trusted by leading importers across electronics, steel, pharma, food, and consumer goods
-          </p>
-          <div className="flex justify-center items-center gap-12 flex-wrap">
-            {["Bahru Steels", "PUMA", "Motorola"].map((name) => (
-              <span key={name} className="text-lg font-semibold text-[var(--navy)]/40 tracking-wide">
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA — clean banner */}
-      <section className="py-16 bg-[var(--navy)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl text-white mb-3">
+      {/* CTA */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-serif text-3xl text-[var(--navy)] mb-3">
             Let&apos;s Work Together
           </h2>
-          <p className="text-white/60 mb-8 max-w-lg mx-auto">
+          <p className="text-gray-600 mb-8 max-w-lg mx-auto">
             Whether you&apos;re navigating your first Indian import or optimizing an
             established supply chain, we&apos;re ready to help.
           </p>
@@ -240,7 +141,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/services"
-              className="px-8 py-3.5 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
+              className="px-8 py-3.5 border border-[var(--navy)]/30 text-[var(--navy)] font-semibold rounded-lg hover:bg-[var(--navy)]/5 transition-colors"
             >
               View Our Services
             </Link>

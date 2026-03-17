@@ -137,9 +137,9 @@ export default function ServicesPage() {
     <div>
       {/* Hero */}
       <section className="bg-[var(--navy)] py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-serif text-4xl md:text-5xl text-white">Our Services</h1>
-          <p className="mt-4 text-lg text-white/70 max-w-2xl">
+          <p className="mt-4 text-lg text-white/70">
             Five integrated practices covering every aspect of Indian import
             compliance. One firm, end to end.
           </p>
@@ -148,7 +148,7 @@ export default function ServicesPage() {
 
       {/* All Services */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {SERVICES.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}
@@ -156,17 +156,17 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[var(--gold)] py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-[var(--light-bg)] py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-serif text-2xl text-[var(--navy)]">
-            Not sure which service you need?
+            One firm. Five practices. Complete coverage.
           </h2>
-          <p className="mt-2 text-[var(--navy)]/70">
+          <p className="mt-2 text-gray-600">
             Tell us about your situation and we&apos;ll recommend the right approach.
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center px-6 py-3 bg-[var(--navy)] text-white font-semibold rounded-lg hover:bg-[var(--deep-blue)] transition-colors"
+            className="mt-6 inline-flex items-center px-6 py-3 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[var(--gold-hover)] transition-colors"
           >
             Schedule a Free Consultation
           </Link>

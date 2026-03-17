@@ -3,9 +3,9 @@
 import { useCountUp } from "@/lib/hooks/use-count-up";
 
 const NUMBERS = [
-  { end: 264, suffix: "", label: "Regulatory checks per product" },
-  { end: 19, suffix: "", label: "Government data sources" },
-  { end: 11500, suffix: "+", label: "HS codes in Indian customs tariff" },
+  { end: 264, suffix: "", label: "Compliance checks per query" },
+  { end: 19, suffix: "", label: "Government data sources integrated" },
+  { end: 11500, suffix: "+", label: "Products in compliance database" },
   { end: 45, suffix: "+", label: "Countries served" },
   { end: 25, suffix: "+", label: "Years of regulatory experience" },
   { end: 10, suffix: "+", label: "Government agencies covered" },

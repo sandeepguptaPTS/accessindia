@@ -66,7 +66,7 @@ export default async function ReportPage({ params }: ReportPageProps) {
     <div>
       {/* Breadcrumb hero */}
       <section className="bg-[var(--navy)] py-8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-sm text-white/50" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[var(--gold)] transition-colors">Home</Link>
             <span>/</span>
@@ -86,7 +86,7 @@ export default async function ReportPage({ params }: ReportPageProps) {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="flex items-center justify-between mb-6">
           <Link
             href="/search"

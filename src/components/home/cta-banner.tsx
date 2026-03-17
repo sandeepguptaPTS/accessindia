@@ -2,22 +2,25 @@ import Link from "next/link";
 
 export function CtaBanner() {
   return (
-    <section className="bg-[var(--gold)] py-12 md:py-16">
+    <section className="bg-white py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-serif text-2xl md:text-3xl text-[var(--navy)] max-w-2xl mx-auto">
           Importing into India? Have a big or small policy issue?{" "}
-          <span className="font-bold">Let&apos;s talk.</span>
+          <span className="font-bold text-[var(--gold)]">Let&apos;s talk.</span>
         </h2>
+        <p className="mt-4 text-gray-600 max-w-xl mx-auto">
+          Our team will assess your compliance requirements and give you a clear roadmap.
+        </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact"
-            className="px-6 py-3 bg-[var(--navy)] text-white font-semibold rounded-lg hover:bg-[var(--deep-blue)] transition-colors"
+            className="px-6 py-3 bg-[var(--gold)] text-[var(--navy)] font-semibold rounded-lg hover:bg-[var(--gold-hover)] transition-colors"
           >
             Get in Touch
           </Link>
           <Link
             href="/services"
-            className="px-6 py-3 bg-white text-[var(--navy)] font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+            className="px-6 py-3 border border-[var(--navy)]/30 text-[var(--navy)] font-semibold rounded-lg hover:bg-[var(--navy)]/5 transition-colors"
           >
             View Our Services
           </Link>
