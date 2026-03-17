@@ -7,7 +7,7 @@ const STATS = [
 
 export function TrustBar() {
   return (
-    <section className="bg-[var(--deep-blue)] py-6">
+    <section className="bg-[var(--navy)] border-t border-[var(--gold)]/20 py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {STATS.map((stat) => (
