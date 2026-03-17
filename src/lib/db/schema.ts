@@ -97,5 +97,10 @@ export function initializeDatabase(db: Database.Database): void {
       key TEXT PRIMARY KEY,
       value TEXT NOT NULL DEFAULT '{}'
     );
+
+    CREATE INDEX IF NOT EXISTS idx_duty_rates_hs_code ON duty_rates(hs_code);
+    CREATE INDEX IF NOT EXISTS idx_fta_rates_hs_code ON fta_rates(hs_code);
+    CREATE INDEX IF NOT EXISTS idx_anti_dumping_hs_code ON anti_dumping_duties(hs_code);
+    CREATE INDEX IF NOT EXISTS idx_dgft_licensing_hs_code ON dgft_licensing(hs_code);
   `);
 }

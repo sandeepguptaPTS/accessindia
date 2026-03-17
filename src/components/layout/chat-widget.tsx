@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { MessageCircle, X, Send, ArrowRight, Loader2 } from "lucide-react";
+import { COUNTRIES } from "@/lib/constants";
 
 type ChatStep = "welcome" | "product" | "country" | "value" | "loading" | "result" | "lead" | "error";
 
@@ -19,15 +20,6 @@ interface ChatState {
     hsCode?: string;
   } | null;
 }
-
-const COUNTRIES = [
-  "China", "United States", "Germany", "Japan", "South Korea", "Taiwan",
-  "Vietnam", "Thailand", "Malaysia", "Indonesia", "Singapore", "Australia",
-  "United Kingdom", "United Arab Emirates", "Saudi Arabia", "Bangladesh",
-  "Sri Lanka", "Nepal", "New Zealand", "Italy", "France", "Netherlands",
-  "Turkey", "Brazil", "Canada", "Mexico", "South Africa", "Nigeria",
-  "Russia", "Switzerland",
-];
 
 const SESSION_KEY = "accessindia-chat-state";
 

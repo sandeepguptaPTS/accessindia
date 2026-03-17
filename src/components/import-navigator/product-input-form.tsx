@@ -13,39 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-const COUNTRIES = [
-  "China",
-  "United States",
-  "Germany",
-  "Japan",
-  "South Korea",
-  "Taiwan",
-  "Vietnam",
-  "Thailand",
-  "Malaysia",
-  "Indonesia",
-  "Singapore",
-  "Australia",
-  "United Kingdom",
-  "United Arab Emirates",
-  "Saudi Arabia",
-  "Bangladesh",
-  "Sri Lanka",
-  "Nepal",
-  "New Zealand",
-  "Italy",
-  "France",
-  "Netherlands",
-  "Turkey",
-  "Brazil",
-  "Canada",
-  "Mexico",
-  "South Africa",
-  "Nigeria",
-  "Russia",
-  "Switzerland",
-];
+import { COUNTRIES } from "@/lib/constants";
 
 interface ProductInputFormProps {
   onSubmit: (data: {
