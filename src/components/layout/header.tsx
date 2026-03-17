@@ -33,7 +33,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-white/80 hover:text-[var(--gold)] transition-colors flex items-center gap-1.5"
+                className="text-sm font-medium text-white/80 hover:text-[var(--gold)] transition-colors flex items-center gap-1.5 py-2"
               >
                 {link.href === "/search" && <Search className="w-3.5 h-3.5" />}
                 {link.label}

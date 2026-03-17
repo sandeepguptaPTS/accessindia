@@ -73,12 +73,12 @@ export function Footer() {
                 </a>
               </p>
             </div>
-            <div className="flex gap-3 mt-4">
+            <div className="flex gap-1 mt-4">
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/50 hover:text-[var(--gold)] transition-colors"
+                className="text-white/50 hover:text-[var(--gold)] transition-colors p-2"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -87,7 +87,7 @@ export function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/50 hover:text-[var(--gold)] transition-colors"
+                className="text-white/50 hover:text-[var(--gold)] transition-colors p-2"
                 aria-label="X / Twitter"
               >
                 <Twitter className="w-5 h-5" />
@@ -96,7 +96,7 @@ export function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/50 hover:text-[var(--gold)] transition-colors"
+                className="text-white/50 hover:text-[var(--gold)] transition-colors p-2"
                 aria-label="YouTube"
               >
                 <Youtube className="w-5 h-5" />
