@@ -30,17 +30,19 @@
   - Labels/badges: 11-12px (text-xs) / uppercase tracking-wider
 
 ## Color
-- **Approach:** Restrained — navy + gold with neutral grays. Color is rare and meaningful.
+- **Approach:** Restrained — navy + clay-orange on warm ivory, with sky as the categorical info accent. Color is rare and meaningful.
 
 ### Brand
 | Token | Hex | Usage |
 |-------|-----|-------|
 | Navy | `#0D1B3E` | Primary surfaces (hero, footer), heading text, cards |
-| Deep Blue | `#1A3A6B` | Hover states, CTA variants (no longer used for trust bar) |
-| Gold | `#D4A843` | Accent — CTAs, focus rings, badges, value headings |
-| Gold Hover | `#c49a3a` | Gold button hover state |
-| Light BG | `#F4F6FA` | Alternating section backgrounds |
-| White | `#FFFFFF` | Primary content background |
+| Deep Blue | `#1A3A6B` | Hover states, CTA variants |
+| Clay (`--gold` token) | `#d97757` | Accent — CTAs, focus rings, badges, value headings. Token name kept as `--gold` for backwards-compat. |
+| Ember (`--gold-hover`) | `#c6613f` | Clay button hover state |
+| Sky | `#6a9bcc` | Categorical info accent (regulatory notes, info badges) |
+| Oat | `#e3dacc` | Warm hairline borders, soft surface accents |
+| Ivory (`--light-bg`) | `#faf9f5` | Page background, alternating sections |
+| White | `#FFFFFF` | Card content background |
 
 ### Neutrals (Tailwind gray scale)
 | Token | Hex | Usage |
@@ -120,9 +122,11 @@ Defined in `globals.css` `:root`:
 ```css
 --navy: #0D1B3E;
 --deep-blue: #1A3A6B;
---gold: #D4A843;
---gold-hover: #c49a3a;
---light-bg: #F4F6FA;
+--gold: #d97757;        /* Clay — token name retained for backwards compat */
+--gold-hover: #c6613f;  /* Ember */
+--light-bg: #faf9f5;    /* Ivory */
+--sky: #6a9bcc;
+--oat: #e3dacc;
 ```
 
 ## Decisions Log
@@ -134,3 +138,4 @@ Defined in `globals.css` `:root`:
 | 2026-03-17 | Hero pattern standardized | All pages now use consistent left-aligned, max-w-5xl, py-16 md:py-20 hero pattern. |
 | 2026-03-18 | Header → frosted glass | Switched from solid navy to light frosted glass (`bg-white/80 backdrop-blur-xl`) with dark navy text. Readable on all background colors (dark hero, white sections, light CTA areas). |
 | 2026-03-18 | Hero + trust bar viewport fit | Wrapped hero and trust bar in viewport-height flex container. Trust bar background changed from deep-blue to navy with gold border for seamless look. |
+| 2026-05-06 | Palette tune: gold → clay-orange, light-bg → ivory | Aligned the family of three sites (accessindia, easemyqco, easemydgft) on an Anthropic-inspired warm-neutral system: navy ink + clay-orange accent + sky as info + ivory canvas. Token names (`--gold`, `--light-bg`) retained to avoid component churn — only the values changed. McKinsey gold `#D4A843` is no longer in use. |

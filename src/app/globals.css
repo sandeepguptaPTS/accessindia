@@ -41,8 +41,10 @@
   --color-card: var(--card);
   --color-navy: #0D1B3E;
   --color-deep-blue: #1A3A6B;
-  --color-gold: #D4A843;
-  --color-light-bg: #F4F6FA;
+  --color-gold: #d97757;
+  --color-light-bg: #faf9f5;
+  --color-sky: #6a9bcc;
+  --color-oat: #e3dacc;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -54,7 +56,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #F4F6FA;
+  --background: #faf9f5;
   --foreground: #0D1B3E;
   --card: #FFFFFF;
   --card-foreground: #0D1B3E;
@@ -64,32 +66,37 @@
   --primary-foreground: #FFFFFF;
   --secondary: #1A3A6B;
   --secondary-foreground: #FFFFFF;
-  --muted: #E8EBF2;
+  --muted: #f0eee6;
   --muted-foreground: #4A5568;
-  --accent: #D4A843;
-  --accent-foreground: #0D1B3E;
+  --accent: #d97757;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #D1D5DB;
+  --border: #e3dacc;
   --input: #D1D5DB;
-  --ring: #D4A843;
+  --ring: #d97757;
   --chart-1: #0D1B3E;
   --chart-2: #1A3A6B;
-  --chart-3: #D4A843;
-  --chart-4: #2D5AA0;
-  --chart-5: #B8922E;
+  --chart-3: #d97757;
+  --chart-4: #6a9bcc;
+  --chart-5: #c6613f;
   --sidebar: #0D1B3E;
   --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #D4A843;
-  --sidebar-primary-foreground: #0D1B3E;
+  --sidebar-primary: #d97757;
+  --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #1A3A6B;
   --sidebar-accent-foreground: #FFFFFF;
   --sidebar-border: #1A3A6B;
-  --sidebar-ring: #D4A843;
+  --sidebar-ring: #d97757;
   --navy: #0D1B3E;
   --deep-blue: #1A3A6B;
-  --gold: #D4A843;
-  --gold-hover: #c49a3a;
-  --light-bg: #F4F6FA;
+  /* The --gold token name is preserved for backwards compat with existing
+   * components; the value moves from McKinsey gold #D4A843 to Anthropic-style
+   * Clay (#d97757) so the family reads navy + clay-orange + warm cream. */
+  --gold: #d97757;
+  --gold-hover: #c6613f;
+  --light-bg: #faf9f5;
+  --sky: #6a9bcc;
+  --oat: #e3dacc;
 }
 
 @layer base {
